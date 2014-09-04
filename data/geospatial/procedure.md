@@ -29,26 +29,39 @@ This document describes the procedure we followed to create a geojson with borde
         the_geom_webmercator,
         nom AS name,
         CASE 
-            WHEN nom = 'Anderlecht' THEN 'Brussels'
-            WHEN nom = 'Auderghem' THEN 'Brussels'
-            WHEN nom = 'Berchem-Sainte-Agathe' THEN 'Brussels'
-            WHEN nom = 'Bruxelles' THEN 'Brussels'
-            WHEN nom = 'Etterbeek' THEN 'Brussels'
-            WHEN nom = 'Evere' THEN 'Brussels'
-            WHEN nom = 'Forest' THEN 'Brussels'
-            WHEN nom = 'Ganshoren' THEN 'Brussels'
-            WHEN nom = 'Ixelles' THEN 'Brussels'
-            WHEN nom = 'Jette' THEN 'Brussels'
-            WHEN nom = 'Koekelberg' THEN 'Brussels'
-            WHEN nom = 'Molenbeek-Saint-Jean' THEN 'Brussels'
-            WHEN nom = 'Saint-Gilles' THEN 'Brussels'
-            WHEN nom = 'Saint-Josse-ten-Noode' THEN 'Brussels'
-            WHEN nom = 'Schaerbeek' THEN 'Brussels'
-            WHEN nom = 'Uccle' THEN 'Brussels'
-            WHEN nom = 'Watermael-Boitsfort' THEN 'Brussels'
-            WHEN nom = 'Woluwe-Saint-Lambert' THEN 'Brussels'
-            WHEN nom = 'Woluwe-Saint-Pierre' THEN 'Brussels'
+            WHEN nom='Anderlecht' THEN 'Brussels'
+            WHEN nom='Auderghem' THEN 'Brussels'
+            WHEN nom='Berchem-Sainte-Agathe' THEN 'Brussels'
+            WHEN nom='Bruxelles' THEN 'Brussels'
+            WHEN nom='Etterbeek' THEN 'Brussels'
+            WHEN nom='Evere' THEN 'Brussels'
+            WHEN nom='Forest' THEN 'Brussels'
+            WHEN nom='Ganshoren' THEN 'Brussels'
+            WHEN nom='Ixelles' THEN 'Brussels'
+            WHEN nom='Jette' THEN 'Brussels'
+            WHEN nom='Koekelberg' THEN 'Brussels'
+            WHEN nom='Molenbeek-Saint-Jean' THEN 'Brussels'
+            WHEN nom='Saint-Gilles' THEN 'Brussels'
+            WHEN nom='Saint-Josse-ten-Noode' THEN 'Brussels'
+            WHEN nom='Schaerbeek' THEN 'Brussels'
+            WHEN nom='Uccle' THEN 'Brussels'
+            WHEN nom='Watermael-Boitsfort' THEN 'Brussels'
+            WHEN nom='Woluwe-Saint-Lambert' THEN 'Brussels'
+            WHEN nom='Woluwe-Saint-Pierre' THEN 'Brussels'
             ELSE 'Wallonia'
         END AS region
     FROM municipalities_wal_bru
     ```
+6. Save result as new table `municipalities`.
+7. Create a view for geojson export:
+
+    ```SQL
+    SELECT
+        name,
+        region,
+        the_geom
+    FROM municipalities
+    ORDER BY
+        region,
+        name
+   ```
