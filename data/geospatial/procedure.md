@@ -51,7 +51,7 @@ This document describes the procedure we followed to create a geojson with borde
         END AS region
     FROM municipalities_wal_bru
     ```
-6. Save result as new table `municipalities`.
+6. Save result as new table `municipalities_belgium`.
 7. Create a view for geojson export:
 
     ```SQL
@@ -59,7 +59,7 @@ This document describes the procedure we followed to create a geojson with borde
         name,
         region,
         the_geom
-    FROM municipalities
+    FROM municipalities_belgium
     ORDER BY
         region,
         name
