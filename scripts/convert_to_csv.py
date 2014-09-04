@@ -86,7 +86,7 @@ def clean_data(indata):
     return outrows
 
 def write_data(data):
-    with open('data.csv', 'w+') as f:
+    with open('data/data.csv', 'w+') as f:
         r = csv.writer(f, delimiter=',')
         r.writerow(['gemeente', 'deelgemeente', 'schijf1', 'schijf2', 'schijf3', 'schijf4', 'schijf5', 'schijf6', 'buiten afschakelplan', 'totaal'])
         for row in data:
