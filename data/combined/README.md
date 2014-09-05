@@ -2,7 +2,7 @@
 
 1. Follow the steps to create the [geospatial municipalities](../geospatial/README.md) and [rolling blackout data](../blackout/README.md).
 2. Upload the [aggregated blackout data](../blackout/rolling-blackout-data-aggregated-by-municipality.csv) to CartoDB as `rolling_blackout`.
-3. Set field types:
+3. Change data types:
 
     ```SQL
     ALTER TABLE rolling_blackout
@@ -23,7 +23,7 @@
     ALTER COLUMN total SET data type numeric USING NULLIF(total,'')::numeric;
     ```
 
-4. Add columns:
+4. Add columns and rename one:
 
     ```SQL
     ALTER TABLE rolling_blackout
@@ -35,7 +35,11 @@
     ADD COLUMN section_5_pct numeric,
     ADD COLUMN section_6_pct numeric,
     ADD COLUMN all_sections_pct numeric,
-    ADD COLUMN excluded_pct numeric
+    ADD COLUMN excluded_pct numeric,
+    ADD COLUMN region text;
+    
+    ALTER TABLE rolling_blackout
+    RENAME COLUMN municipality_geojson TO municipality
     ```
 
 5. Populate `all_sections`:
