@@ -111,7 +111,7 @@ def map_municipalities(indata):
 def write_data(data):
     with open('data/blackout/rolling-blackout-data.csv', 'w+') as f:
         r = csv.writer(f, delimiter=',')
-        r.writerow(['municipality', 'municipality_geojson', 'district', 'section1', 'section2', 'section3', 'section4', 'section5', 'section6', 'excluded', 'total'])
+        r.writerow(['municipality', 'municipality_geojson', 'district', 'section_1', 'section_2', 'section_3', 'section_4', 'section_5', 'section_6', 'excluded', 'total'])
         for row in data:
             r.writerow(row)
 
