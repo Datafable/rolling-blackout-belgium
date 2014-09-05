@@ -1,8 +1,3 @@
-/* ---------------
- * Create map with baselayer
- * ---------------
- */
-
 function drawMap() {
     window.map;
     var MAPTYPE_ID = 'custom_style';
@@ -23,8 +18,8 @@ function drawMap() {
     ];
     var featureOpts = mapStyle;
     var mapOptions = {
-	zoom: 7,
-	center: new google.maps.LatLng(50.4, 4),
+	zoom: 8,
+	center: new google.maps.LatLng(50.52,4.5),
 	mapTypeControlOptions: {
 	    mapTypeIds: [google.maps.MapTypeId.ROADMAP, google.maps.MapTypeId.HYBRID, MAPTYPE_ID]
 	},
