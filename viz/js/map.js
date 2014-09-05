@@ -52,14 +52,30 @@ function showBlackoutData(map) {
 	type: 'cartodb',
 	sublayers: [{
 	    sql: sql,
-	    cartocss: '#municipalities_blackout_pct {polygon-fill: #F0F0F0;}'
+	    cartocss: '#municipalities_blackout_pct { [excluded_pct > 90] {polygon-fill: #F0F0F0;} [excluded_pct < 90] {polygon-fill: #F0F0F0;} [excluded_pct < 80] {polygon-fill: #F0F000;} }'
 	}]
     })
     .addTo(map)
     .done(function(layer) {
+        window.mapLayer = layer;
     });
 };
 
+// Update cartocss based on selected section
+function showBySection(sectionnr) {
+    var section = 'section_' + sectionnr;
+    var cartocss = vsprintf('#municipalities_blackout_pct { [ %s_pct < 90] {polygon-fill: #FF0000; } [ %s_pct < 80] { polygon-fill: #00FF00} }', [section, section]);
+    window.mapLayer.setCartoCSS(cartocss);
+}
+
+
+// jQuery bindings to controls
+function bindControls() {
+    $("input:radio[name=section]").change(function() {
+        showBySection(this.value);
+    });
+}
 
 // Add the base map to the page
+bindControls();
 window.onload = drawMap;
