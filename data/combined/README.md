@@ -34,7 +34,35 @@
     ADD COLUMN section_4_pct numeric,
     ADD COLUMN section_5_pct numeric,
     ADD COLUMN section_6_pct numeric,
-    ADD COLUMN all_sectoins_pct numeric,
+    ADD COLUMN all_sections_pct numeric,
     ADD COLUMN excluded_pct numeric
     ```
 
+5. Populate `all_sections`:
+
+    ```SQL
+    UPDATE rolling_blackout
+    SET all_sections =
+       coalesce(section_1, 0) + 
+       coalesce(section_2, 0) + 
+       coalesce(section_3, 0) + 
+       coalesce(section_4, 0) + 
+       coalesce(section_5, 0) + 
+       coalesce(section_6, 0)
+    ```
+
+6. Calculate percentages for all categories:
+
+    ```SQL
+    UPDATE rolling_blackout
+    SET
+        all_sections_pct = round(all_sections/total*100,2),
+        section_1_pct = round(section_1/total*100,2),
+        section_2_pct = round(section_2/total*100,2),
+        section_3_pct = round(section_3/total*100,2),
+        section_4_pct = round(section_4/total*100,2),
+        section_5_pct = round(section_5/total*100,2),
+        section_6_pct = round(section_6/total*100,2),
+        excluded_pct = round(excluded/total*100,2)
+    WHERE total != 0;
+    ```
