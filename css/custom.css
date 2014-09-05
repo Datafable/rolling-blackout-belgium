@@ -1,0 +1,11 @@
+/* Custom css */
+section {
+    margin-bottom: 1em;
+}
+
+#map {
+    display: block;
+    float: left;
+    height: 400px;
+    width: 100%;
+}
