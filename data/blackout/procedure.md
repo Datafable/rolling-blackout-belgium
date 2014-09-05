@@ -10,5 +10,5 @@
     * Fix a couple of lines that contain an additional leading or trailing cell.
     * Remove empty lines.
     * Write the data to [rolling-blackout-data.csv](rolling-blackout-data.csv)
-4. [This script](../../scripts/aggregate_by_municipality.py) then aggregates the data by municipality and returns the sum of the cabins to be switched off in each section. *Note: you will need pandas if you want to run this script. Go to the root and install with `pip install -r requirements.txt`.*
+4. [This script](../../scripts/aggregate_by_municipality.py) then aggregates the data by municipality and returns the sum of the cabins to be switched off in each section as [rolling-blackout-data-aggregated-by-municipality.csv](rolling-blackout-data-aggregated-by-municipality.csv). *Note: you will need pandas if you want to run this script. Go to the root and install with `pip install -r requirements.txt`.*
 
