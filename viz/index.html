@@ -1,47 +1,50 @@
 <!DOCTYPE html>
-<head>
-    <meta charset="utf-8">
-    <title>Rolling blackout Belgium</title>
-    <meta name="author" content="Datafable">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Rolling blackout Belgium</title>
+        <meta name="author" content="Datafable">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="shortcut icon" href="">
-    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css">
-    <link rel="stylesheet" href="css/main.css">
-</head>
-<body>
-    <div class="container">
+        <link rel="shortcut icon" href="">
+        <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
 
-        <div class="content">
-            <section>
-                <header>
-                    <h2>Shut down a section</h2>
-                </header>
-            </section>
+    <body>
+        <div class="container">
 
-            <section>
-                <div id="controls">
-                    <form action="">
-                        <input type="radio" name="section" value="1">Section 1</input>
-                        <input type="radio" name="section" value="2">Section 2</input>
-                        <input type="radio" name="section" value="3">Section 3</input>
-                        <input type="radio" name="section" value="4">Section 4</input>
-                        <input type="radio" name="section" value="5">Section 5</input>
-                        <input type="radio" name="section" value="6">Section 6</input>
-                    </form>
-                </div>
-                <div id="map"></div>
-            </section>
+            <div class="content">
+                <section>
+                    <header>
+                        <h2>Shut down a section</h2>
+                    </header>
+                </section>
+
+                <section>
+                    <div id="controls">
+                        <form action="">
+                            <input type="radio" name="section" value="1">Section 1</input>
+                            <input type="radio" name="section" value="2">Section 2</input>
+                            <input type="radio" name="section" value="3">Section 3</input>
+                            <input type="radio" name="section" value="4">Section 4</input>
+                            <input type="radio" name="section" value="5">Section 5</input>
+                            <input type="radio" name="section" value="6">Section 6</input>
+                        </form>
+                    </div>
+                    <div id="map"></div>
+                </section>
+
+            </div>
 
         </div>
 
-    </div>
-
-    <!-- Scripts -->
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
-    <script src="http://libs.cartocdn.com/cartodb.js/v3/cartodb.js"></script>
-    <script type="text/javascript" src="js/sprintf.min.js"></script>
-    <script type="text/javascript" src="js/map.js"></script>
-</body>
+        <!-- Scripts -->
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+        <script src="http://libs.cartocdn.com/cartodb.js/v3/cartodb.js"></script>
+        <script type="text/javascript" src="js/sprintf.min.js"></script>
+        <script type="text/javascript" src="js/map.js"></script>
+    </body>
+</html>
