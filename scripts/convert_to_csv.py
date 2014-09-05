@@ -85,16 +85,40 @@ def clean_data(indata):
                 outrows.append([current_municipality, district, section1, section2, section3, section4, section5, section6, excluded, total])
     return outrows
 
+def read_municipalities_to_map():
+    mapping_file = 'data/blackout/municipalities_to_map.csv'
+    outdict = {}
+    with open(mapping_file) as f:
+        r = csv.reader(f)
+        header = r.next()
+        for row in r:
+            outdict[row[0]] = row[1]
+    return outdict
+
+def map_municipalities(indata):
+    municip_dict = read_municipalities_to_map()
+    outrows = []
+    for row in indata:
+        municip = row[0]
+        if municip in municip_dict.keys():
+            geojson_municip_name = municip_dict[municip]
+        else:
+            geojson_municip_name = municip
+        row.insert(1, geojson_municip_name)
+        outrows.append(row)
+    return outrows
+
 def write_data(data):
     with open('data/blackout/rolling-blackout-data.csv', 'w+') as f:
         r = csv.writer(f, delimiter=',')
-        r.writerow(['municipality', 'district', 'section1', 'section2', 'section3', 'section4', 'section5', 'section6', 'excluded', 'total'])
+        r.writerow(['municipality', 'municipality_geojson', 'district', 'section1', 'section2', 'section3', 'section4', 'section5', 'section6', 'excluded', 'total'])
         for row in data:
             r.writerow(row)
 
 def main():
     data = convert_data(sys.argv[1])
     cleaned_data = clean_data(data)
-    write_data(cleaned_data)
+    mapped_data = map_municipalities(cleaned_data)
+    write_data(mapped_data)
 
 main()

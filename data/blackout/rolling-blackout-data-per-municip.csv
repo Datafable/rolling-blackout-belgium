@@ -1,4 +1,4 @@
-municipality,section1,section2,section3,section4,section5,section6,excluded,total
+municipality_geojson,section1,section2,section3,section4,section5,section6,excluded,total
 Aalst,,66.0,3.0,,,,548.0,617
 Aalter,,,11.0,1.0,,207.0,54.0,273
 Aarschot,,,,,,303.0,3.0,306
@@ -8,7 +8,7 @@ Aiseau-Presles,,,,66.0,,,1.0,67
 Alken,,,,,,,79.0,79
 Alveringem,,,,,,,135.0,135
 Amay,,,,100.0,1.0,,6.0,107
-Amel,,134.0,,,,,,134
+Amblève (Amel),,134.0,,,,,,134
 Andenne,,,21.0,252.0,,,9.0,282
 Anderlecht,,,,,,,609.0,609
 Anderlues,,4.0,,,,79.0,,83
@@ -29,6 +29,7 @@ Ath,150.0,,45.0,,36.0,,1.0,232
 Attert,,,,,,,68.0,68
 Aubange,100.0,,,,,,,100
 Aubel,,97.0,,,,,,97
+Auderghem,,,,,1.0,,199.0,200
 Avelgem,,,,,,,122.0,122
 Awans,,,,,76.0,,,76
 Aywaille,,,,,,,131.0,131
@@ -45,7 +46,8 @@ Beerse,1.0,,,,1.0,,143.0,145
 Beersel,,,,,41.0,,186.0,227
 Begijnendijk,,,,,,68.0,,68
 Bekkevoort,,,,,65.0,,10.0,75
-Beloeil,,,,,90.0,,,90
+Belœil,,,,,90.0,,,90
+Berchem-Sainte-Agathe,,,,,,,120.0,120
 Beringen,,143.0,,,,,69.0,212
 Berlaar,,,,,,,94.0,94
 Berlare,107.0,,,,,3.0,5.0,115
@@ -86,12 +88,12 @@ Bree,,,,126.0,,10.0,,136
 Brugelette,,,,,30.0,,,30
 Brugge,,,,,11.0,,1190.0,1201
 Brunehaut,53.0,,,,,,,53
-Brussel / Bruxelles,,,,,,,1821.0,1821
+Bruxelles,,,,,,,1821.0,1821
 Buggenhout,,,126.0,,,,,126
+Bullange (Büllingen),,39.0,,,,,84.0,123
 Burdinne,,,,30.0,1.0,,,31
 Burg-Reuland,,98.0,,,,,,98
-Büllingen,,39.0,,,,,84.0,123
-Bütgenbach,,,,,,,96.0,96
+Butgenbach (Bütgenbach),,,,,,,96.0,96
 Celles,8.0,,,,,,92.0,100
 Cerfontaine,,,29.0,,,,48.0,77
 Chapelle-lez-Herlaimont,,56.0,,17.0,,3.0,,76
@@ -109,7 +111,7 @@ Colfontaine,,,,,76.0,,3.0,79
 Comblain-au-Pont,,,,,,,48.0,48
 Comines-Warneton,,,,,,,208.0,208
 Courcelles,,,2.0,146.0,,22.0,,170
-Court-Saint-Etienne,22.0,,,,,63.0,,85
+Court-Saint-Étienne,22.0,,,,,63.0,,85
 Couvin,,,81.0,,,,26.0,107
 Crisnée,,,,,33.0,,,33
 Dalhem,,110.0,,,,,,110
@@ -138,22 +140,17 @@ Dour,,,,,103.0,,,103
 Drogenbos,,,,,,,79.0,79
 Duffel,,,92.0,,,,38.0,130
 Durbuy,,,,230.0,,,3.0,233
-Ecaussinnes,,,81.0,,,,3.0,84
 Edegem,,,25.0,,,,66.0,91
 Eeklo,,,,,,,222.0,222
-Eghezée,,,191.0,,,,,191
 Ellezelles,12.0,,12.0,,,,54.0,78
-Elsene /Ixelles,,,,,,,389.0,389
 Enghien,,,106.0,,,,,106
 Engis,,,,71.0,3.0,,2.0,76
-Erezée,,,,71.0,,,,71
 Erpe-Mere,1.0,,,3.0,,,167.0,171
 Erquelinnes,,86.0,,,,,,86
 Esneux,,,,3.0,,5.0,106.0,114
 Essen,,,,,115.0,,,115
 Estaimpuis,229.0,,,,,,,229
 Estinnes,,97.0,,,,,,97
-Etalle,41.0,,,,,,14.0,55
 Etterbeek,,,,,,,207.0,207
 Eupen,,,,,,,260.0,260
 Evere,,,,,,,219.0,219
@@ -171,7 +168,8 @@ Florennes,,,132.0,,,,12.0,144
 Florenville,124.0,,,,,,,124
 Flémalle,,,,12.0,171.0,,,183
 Fléron,,,,,,99.0,1.0,100
-Fontaine-l'Evêque,,,,1.0,,113.0,5.0,119
+Fontaine-l'Évêque,,,,1.0,,113.0,5.0,119
+Forest,,,,,,,263.0,263
 Fosses-la-Ville,,,113.0,1.0,,,6.0,120
 Frameries,,33.0,,,70.0,,,103
 Frasnes-lez-Anvaing,96.0,,,,,,76.0,172
@@ -257,6 +255,7 @@ Ieper,,,,,,,520.0,520
 Incourt,,42.0,,,,,3.0,45
 Ingelmunster,,,,,,,154.0,154
 Ittre,,,62.0,3.0,,,,65
+Ixelles,,,,,,,389.0,389
 Izegem,,,,,,,376.0,376
 Jabbeke,,,,,159.0,,,159
 Jalhay,,38.0,,,,,2.0,40
@@ -272,7 +271,6 @@ Kapellen,,,,,146.0,,,146
 Kaprijke,,,,,,,74.0,74
 Kasterlee,153.0,,,,,,5.0,158
 Keerbergen,,84.0,,,,,13.0,97
-Kelmis,,83.0,,,,,4.0,87
 Kinrooi,,,,6.0,,84.0,,90
 Kluisbergen,,,2.0,,,,94.0,96
 Knesselare,,,,,,84.0,4.0,88
@@ -290,7 +288,9 @@ Kraainem,,,,9.0,,,60.0,69
 Kruibeke,,,,,,,122.0,122
 Kruishoutem,,,20.0,,,,141.0,161
 Kuurne,,,,141.0,,,40.0,181
+L'Église,75.0,,,,,,3.0,78
 La Bruyère,,,93.0,,,,1.0,94
+La Calamine (Kelmis),,83.0,,,,,4.0,87
 La Hulpe,34.0,,,,17.0,,,51
 La Louvière,,153.0,9.0,,,,250.0,412
 La Roche-en-Ardenne,25.0,44.0,,100.0,,,,169
@@ -336,7 +336,6 @@ Lontzen,,56.0,,,,,60.0,116
 Lovendegem,,,,,,,81.0,81
 Lubbeek,,,,,10.0,,103.0,113
 Lummen,,76.0,,,,,35.0,111
-Léglise,75.0,,,,,,3.0,78
 Maarkedal,,,57.0,,,,41.0,98
 Maaseik,,,,,,163.0,,163
 Maasmechelen,,,,,,215.0,3.0,218
@@ -353,7 +352,7 @@ Mechelen,,157.0,,,47.0,,488.0,692
 Meerhout,,,,,,,99.0,99
 Meeuwen-Gruitrode,,,,62.0,,23.0,1.0,86
 Meise,,,,,1.0,,126.0,127
-Meix-Devant-Virton,48.0,,,,,,,48
+Meix-devant-Virton,48.0,,,,,,,48
 Melle,,,,,,87.0,36.0,123
 Menen,,,,,,,332.0,332
 Merbes-le-Château,,48.0,,,,,,48
@@ -368,6 +367,7 @@ Middelkerke,,,,,363.0,,,363
 Modave,,,,,,,49.0,49
 Moerbeke,43.0,,,,,5.0,15.0,63
 Mol,,,,,,,302.0,302
+Molenbeek-Saint-Jean,,,,,,,331.0,331
 Momignies,,,,,,,,0
 Mons,,303.0,,,32.0,,282.0,617
 Mont-Saint-Guibert,1.0,,1.0,,,54.0,8.0,64
@@ -409,7 +409,6 @@ Oud-Heverlee,,,,,,,84.0,84
 Oud-Turnhout,40.0,,,,,,71.0,111
 Oudenaarde,,,390.0,,,,15.0,405
 Oudenburg,,,,,105.0,,,105
-Oudergem / Auderghem,,,,,1.0,,199.0,200
 Ouffet,,,,2.0,,,70.0,72
 Oupeye,,59.0,,,,82.0,,141
 Overijse,46.0,,,,166.0,,,212
@@ -454,13 +453,15 @@ Rumes,42.0,,,,,,,42
 Rumst,,,74.0,,,,35.0,109
 Saint-Georges-sur-Meuse,,,,27.0,38.0,,,65
 Saint-Ghislain,,,,,92.0,,90.0,182
+Saint-Gilles,,,,,,,187.0,187
 Saint-Hubert,105.0,,,,,,,105
+Saint-Josse-ten-Noode,,,,,,,126.0,126
 Saint-Léger,41.0,,,,,,,41
 Saint-Nicolas,,,,,16.0,45.0,2.0,63
+Saint-Vith (Sankt Vith),,214.0,,,,,,214
 Sainte-Ode,82.0,,,,,,13.0,95
 Sambreville,,,4.0,,,,177.0,181
-Sankt Vith,,214.0,,,,,,214
-Schaarbeek / Schaerbeek,,,,,,,348.0,348
+Schaerbeek,,,,,,,348.0,348
 Schelle,,,4.0,,,,56.0,60
 Scherpenheuvel-Zichem,,,,,,44.0,121.0,165
 Schilde,104.0,,,1.0,,,1.0,106
@@ -468,21 +469,15 @@ Schoten,20.0,,,6.0,1.0,,178.0,205
 Seneffe,,2.0,173.0,,,,4.0,179
 Seraing,,,,,140.0,66.0,142.0,348
 Silly,,,89.0,,11.0,,,100
-Sint-Agatha-Berchem / Berchem-Sainte-Agathe,,,,,,,120.0,120
 Sint-Amands,,,53.0,,,3.0,,56
 Sint-Genesius-Rode,6.0,,1.0,,164.0,,1.0,172
-Sint-Gillis / Saint-Gilles,,,,,,,187.0,187
 Sint-Gillis-Waas,,153.0,,,,,16.0,169
-Sint-Jans-Molenbeek / Molenbeek-Saint-Jean,,,,,,,331.0,331
-Sint-Joost-ten-Node / Saint-Josse-Ten-Noode,,,,,,,126.0,126
 Sint-Katelijne-Waver,,120.0,5.0,,,,116.0,241
-Sint-Lambrechts-Woluwe / Woluwé-Saint-Lambert,,,,,,,302.0,302
 Sint-Laureins,,,,,,,101.0,101
 Sint-Lievens-Houtem,91.0,,,,,,,91
 Sint-Martens-Latem,,,111.0,,,,,111
 Sint-Niklaas,186.0,133.0,,,,,354.0,673
 Sint-Pieters-Leeuw,,,,,11.0,,277.0,288
-Sint-Pieters-Woluwe / Woluwé-Saint-Pierre,,,,,,,229.0,229
 Sint-Truiden,,,,,,,299.0,299
 Sivry-Rance,,,89.0,,,,,89
 Soignies,,38.0,133.0,,72.0,,2.0,245
@@ -520,7 +515,7 @@ Trois-Ponts,,79.0,,,,,,79
 Trooz,,3.0,,,,59.0,3.0,65
 Tubize,,,161.0,,,,3.0,164
 Turnhout,52.0,,,,,,353.0,405
-Ukkel / Uccle,,,,,55.0,,445.0,500
+Uccle,,,,,55.0,,445.0,500
 Vaux-sur-Sûre,,,,,,,79.0,79
 Verlaine,,,,,47.0,,,47
 Verviers,,2.0,,,,,449.0,451
@@ -535,13 +530,12 @@ Visé,,123.0,,,,,,123
 Vleteren,,,,,,,67.0,67
 Voeren,,96.0,,,,,,96
 Vorselaar,1.0,,42.0,,,,,43
-Vorst / Forest,,,,,,,263.0,263
 Vosselaar,,,,,,,59.0,59
 Vresse-sur-Semois,68.0,,,,,,,68
 Waarschoot,,,,,,,75.0,75
 Waasmunster,106.0,,,,,,,106
 Wachtebeke,2.0,,,,,77.0,,79
-Waimes,,44.0,,,,,109.0,153
+Waimes (Weismes),,44.0,,,,,109.0,153
 Walcourt,,,218.0,,,,49.0,267
 Walhain,,,,,,55.0,,55
 Wanze,,,,35.0,80.0,,1.0,116
@@ -549,7 +543,7 @@ Waregem,,,,201.0,,,316.0,517
 Waremme,,,,,132.0,,,132
 Wasseiges,,,,12.0,14.0,,,26
 Waterloo,235.0,,,,,,,235
-Watermaal-Bosvoorde / Watermael-Boitsfort,,,,,,,125.0,125
+Watermael-Boitsfort,,,,,,,125.0,125
 Wavre,383.0,,,,3.0,,3.0,389
 Welkenraedt,,17.0,,,,,82.0,99
 Wellen,,,,,,,52.0,52
@@ -565,6 +559,8 @@ Wielsbeke,,,,5.0,,,152.0,157
 Wijnegem,6.0,,,73.0,,,15.0,94
 Willebroek,,,99.0,,121.0,,,220
 Wingene,,,,,103.0,,136.0,239
+Woluwe-Saint-Lambert,,,,,,,302.0,302
+Woluwe-Saint-Pierre,,,,,,,229.0,229
 Wommelgem,,,,116.0,,,16.0,132
 Wortegem-Petegem,,,51.0,,,,43.0,94
 Wuustwezel,,,,,128.0,,48.0,176
@@ -588,3 +584,7 @@ Zutendaal,,,,,,3.0,45.0,48
 Zwalm,,,,,,,89.0,89
 Zwevegem,,,,,,,287.0,287
 Zwijndrecht,,,,,,,120.0,120
+Écaussinnes,,,81.0,,,,3.0,84
+Éghezée,,,191.0,,,,,191
+Érezée,,,,71.0,,,,71
+Étalle,41.0,,,,,,14.0,55
