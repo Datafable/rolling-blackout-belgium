@@ -41,54 +41,54 @@ def convert_data(infile):
 
 def clean_data(indata):
     outrows = []
-    current_gemeente = ''
-    current_deelgem_first_part = ''
-    current_gemeente_first_part = ''
+    current_municipality = ''
+    current_district_first_part = ''
+    current_municipality_first_part = ''
     for row in indata:
         append_row = True
         row_content_ok = True
         if len(row) == 10:
-            gemeente, deelgem, schijf1, schijf2, schijf3, schijf4, schijf5, schijf6, noschijf, total = row
+            municipality, district, section1, section2, section3, section4, section5, section6, excluded, total = row
         elif len(row) == 11:
-            unknown, gemeente, deelgem, schijf1, schijf2, schijf3, schijf4, schijf5, schijf6, noschijf, total = row
+            unknown, municipality, district, section1, section2, section3, section4, section5, section6, excluded, total = row
         elif len(row) == 12 and row[-1] == '' and row[-2] != '':
-            unknown, gemeente, deelgem, schijf1, schijf2, schijf3, schijf4, schijf5, schijf6, noschijf, total, unknown = row
+            unknown, municipality, district, section1, section2, section3, section4, section5, section6, excluded, total, unknown = row
         else:
             print 'don\'t know what to do with this line: \n{0}'.format(row)
             row_content_ok = False
         if row_content_ok:
-            if gemeente != '':
+            if municipality != '':
                 if total == '':
-                    current_gemeente_first_part = gemeente
-                elif current_gemeente_first_part != '':
-                    current_gemeente = current_gemeente_first_part + gemeente 
-                    current_gemeente_first_part = ''
+                    current_municipality_first_part = municipality
+                elif current_municipality_first_part != '':
+                    current_municipality = current_municipality_first_part + municipality
+                    current_municipality_first_part = ''
                 else:
-                    current_gemeente = gemeente
+                    current_municipality = municipality
                 append_row = False
             else:
-                if deelgem == '':
+                if district == '':
                     """ this is an empty line so it should not be appended to the outrows """
                     append_row = False
                 else:
-                    """ deelgem is filled in, but gemeente was not """
+                    """ district is filled in, but municipality was not """
                     if total == '':
                         """ this line should be merged with the next. The name was too long """
-                        current_deelgem_first_part = deelgem
+                        current_district_first_part = district
                         append_row = False
                     else:
                         """ this is a normal data line """
-                        if current_deelgem_first_part != '':
-                            deelgem = current_deelgem_first_part + deelgem
-                            current_deelgem_first_part = ''
+                        if current_district_first_part != '':
+                            district = current_district_first_part + district
+                            current_district_first_part = ''
             if append_row:
-                outrows.append([current_gemeente, deelgem, schijf1, schijf2, schijf3, schijf4, schijf5, schijf6, noschijf, total])
+                outrows.append([current_municipality, district, section1, section2, section3, section4, section5, section6, excluded, total])
     return outrows
 
 def write_data(data):
-    with open('data/data.csv', 'w+') as f:
+    with open('data/blackout/rolling-blackout-data.csv', 'w+') as f:
         r = csv.writer(f, delimiter=',')
-        r.writerow(['gemeente', 'deelgemeente', 'schijf1', 'schijf2', 'schijf3', 'schijf4', 'schijf5', 'schijf6', 'buiten afschakelplan', 'totaal'])
+        r.writerow(['municipality', 'district', 'section1', 'section2', 'section3', 'section4', 'section5', 'section6', 'excluded', 'total'])
         for row in data:
             r.writerow(row)
 
