@@ -86,7 +86,7 @@ def clean_data(indata):
     return outrows
 
 def read_municipalities_to_map():
-    mapping_file = 'data/blackout/municipalities_to_map.csv'
+    mapping_file = 'data/blackout/municipalities-to-map.csv'
     outdict = {}
     with open(mapping_file) as f:
         r = csv.reader(f)

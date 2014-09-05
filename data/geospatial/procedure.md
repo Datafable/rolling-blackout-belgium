@@ -66,4 +66,4 @@ This document describes the procedure we followed to create a geojson with borde
         name
    ```
 
-8. Export as geojson and upload to GitHub as [municipalities_belgium.geojson](municipalities_belgium.geojson).
+8. Export as geojson and upload to GitHub as [municipalities-belgium.geojson](municipalities-belgium.geojson).
