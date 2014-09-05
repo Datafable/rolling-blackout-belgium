@@ -108,3 +108,5 @@
     WHERE
         municipality = m.name
     ```
+
+9. Export as geojson and upload to GitHub as [rolling-blackout.geojson](rolling-blackout.geojson).
