@@ -83,4 +83,28 @@
     WHERE total = 0;
     ```
 
+7. Check if we have a full merge with the municipalities geojson data (stored as `municipalities_belgium` table). The query should return no results:
+
+    ```SQL
+    SELECT
+        b.municipality
+    FROM rolling_blackout b
+    LEFT JOIN municipalities_belgium m
+    ON b.municipality = m.name
+    WHERE m.name IS NULL
+    ```
+
+    If not, the [mapping file](../blackout/municipalities-to-map.csv) should be updated.
+
+8. Merge the two tables:
+
+    ```SQL
+    UPDATE rolling_blackout
+    SET
+        region = m.region,
+        the_geom = m.the_geom,
+        the_geom_webmercator = m.the_geom_webmercator
+    FROM municipalities_belgium m
+    WHERE
+        municipality = m.name
     ```
