@@ -52,18 +52,39 @@ function showBlackoutData(map) {
 	type: 'cartodb',
 	sublayers: [{
 	    sql: sql,
-	    cartocss: '#municipalities_blackout_pct { [excluded_pct > 90] {polygon-fill: #F0F0F0;} [excluded_pct < 90] {polygon-fill: #F0F0F0;} [excluded_pct < 80] {polygon-fill: #F0F000;} }'
+	    cartocss: '#municipalities_blackout_pct {polygon-fill: #F0F0F0;}'
 	}]
     })
     .addTo(map)
     .done(function(layer) {
+        console.log(layer)
         window.mapLayer = layer;
+        var sublayer = layer.getSubLayer(0);
+        sublayer.setInteraction(true);
+        var selectedFields = [
+            'municipality',
+            'total',
+            'section_1_pct',
+            'section_2_pct',
+            'section_3_pct',
+            'section_4_pct',
+            'section_5_pct',
+            'section_6_pct'
+        ];
+        sublayer.set({'interactivity': selectedFields});
+        sublayer.on('featureClick', function(event, latlng, pos, data, layerindex) {
+            console.log(data);
+            var sectionField = "section_" + window.selectedSection + "_pct";
+            $("#sidebar").append("<h1>" + data.municipality + "</h1>");
+            $("#sidebar").append("<h2>Percentage of cabins to be shut down in this section: " + data[sectionField] + "</h2>");
+            $("#sidebar").append("<p>Total number of cabins:" + data.total + "</p>");
+        });
     });
 };
 
 // Update cartocss based on selected section
-function showBySection(sectionnr) {
-    var section = 'section_' + sectionnr;
+function showBySection() {
+    var section = 'section_' + window.selectedSection;
     var cartocss = vsprintf('#municipalities_blackout_pct { [ %s_pct < 90] {polygon-fill: #FF0000; } [ %s_pct < 80] { polygon-fill: #00FF00} }', [section, section]);
     window.mapLayer.setCartoCSS(cartocss);
 }
@@ -72,7 +93,8 @@ function showBySection(sectionnr) {
 // jQuery bindings to controls
 function bindControls() {
     $("input:radio[name=section]").change(function() {
-        showBySection(this.value);
+        window.selectedSection = this.value;
+        showBySection();
     });
 }
 
