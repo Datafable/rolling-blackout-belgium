@@ -1,4 +1,17 @@
-// Create a map with a base layer
+var main = function() {
+    // Draw map
+    drawMap();
+
+    // Select section with button
+    $('.select-section').click(function() {
+        $('.select-section').removeClass('active')
+        $(this).addClass('active');
+        changeSectionOnMap(this.value);
+    });
+};
+
+$(document).ready(main);
+
 function drawMap() {
     window.map;
     var MAPTYPE_ID = 'custom_style';
@@ -33,12 +46,10 @@ function drawMap() {
     };
     var customMapType = new google.maps.StyledMapType(featureOpts, styledMapOptions);
     window.map.mapTypes.set(MAPTYPE_ID, customMapType);
-    showBlackoutData(window.map);
+    showBlackoutDataOnMap(window.map);
 };
 
-
-// Add data layer
-function showBlackoutData(map) {
+function showBlackoutDataOnMap(map) {
     var sql = "SELECT * FROM public.rolling_blackout";
     var section = 'all_sections_pct'
     var cartocss = '#rolling_blackout { polygon-fill: #1a9850; polygon-opacity: 0.8; line-color: #333333; line-width: 0.5; line-opacity: 1; [' + section + ' = 100] { polygon-fill: #d73027; } [' + section + ' < 100] { polygon-fill: #f79272; } [' + section + ' < 80] { polygon-fill: #fed6b0; } [' + section + ' < 60] { polygon-fill: #fff2cc; } [' + section + ' < 40] { polygon-fill: #d2ecb4; } [' + section + ' < 20] { polygon-fill: #8cce8a; } [' + section + ' = 0] { polygon-fill: #1a9850; } }';
@@ -56,21 +67,8 @@ function showBlackoutData(map) {
     });
 };
 
-// Update cartocss based on selected section
-function showBySection(sectionnr) {
+function changeSectionOnMap(sectionnr) {
     var section = 'section_' + sectionnr + '_pct';
     var cartocss = '#rolling_blackout { polygon-fill: #1a9850; polygon-opacity: 0.8; line-color: #333333; line-width: 0.5; line-opacity: 1; [' + section + ' = 100] { polygon-fill: #d73027; } [' + section + ' < 100] { polygon-fill: #f79272; } [' + section + ' < 80] { polygon-fill: #fed6b0; } [' + section + ' < 60] { polygon-fill: #fff2cc; } [' + section + ' < 40] { polygon-fill: #d2ecb4; } [' + section + ' < 20] { polygon-fill: #8cce8a; } [' + section + ' = 0] { polygon-fill: #1a9850; } }';
     window.mapLayer.setCartoCSS(cartocss);
 }
-
-
-// jQuery bindings to controls
-function bindControls() {
-    $("input:radio[name=section]").change(function() {
-        showBySection(this.value);
-    });
-}
-
-// Add the base map to the page
-bindControls();
-window.onload = drawMap;
