@@ -1,3 +1,8 @@
+/* ---------------
+ * Create map with baselayer
+ * ---------------
+ */
+
 function drawMap() {
     window.map;
     var MAPTYPE_ID = 'custom_style';
@@ -42,12 +47,14 @@ function drawMap() {
  */
 function showBlackoutData(map) {
     var sql = "SELECT * FROM public.rolling_blackout";
+    var section = 'all_sections_pct'
+    var cartocss = '#rolling_blackout { polygon-fill: #1a9850; polygon-opacity: 0.8; line-color: #333333; line-width: 0.5; line-opacity: 1; [' + section + ' = 100] { polygon-fill: #d73027; } [' + section + ' < 100] { polygon-fill: #f79272; } [' + section + ' < 80] { polygon-fill: #fed6b0; } [' + section + ' < 60] { polygon-fill: #fff2cc; } [' + section + ' < 40] { polygon-fill: #d2ecb4; } [' + section + ' < 20] { polygon-fill: #8cce8a; } [' + section + ' = 0] { polygon-fill: #1a9850; } }';
     cartodb.createLayer(map, {
 	user_name: 'datafable',
 	type: 'cartodb',
 	sublayers: [{
 	    sql: sql,
-	    cartocss: '#rolling_blackout { polygon-fill: #1a9850; polygon-opacity: 0.8; line-color: #333333; line-width: 0.5; line-opacity: 1; [all_sections_pct = 100] {polygon-fill: #d73027; } [all_sections_pct < 100] {polygon-fill: #f79272; } [all_sections_pct < 80] {polygon-fill: #fed6b0; } [all_sections_pct < 60] {polygon-fill: #fff2cc; } [all_sections_pct < 40] {polygon-fill: #d2ecb4; } [all_sections_pct < 20] {polygon-fill: #8cce8a; } [all_sections_pct = 0] {polygon-fill: #1a9850; } }'
+	    cartocss: cartocss
 	}]
     })
     .addTo(map)
@@ -58,8 +65,8 @@ function showBlackoutData(map) {
 
 // Update cartocss based on selected section
 function showBySection(sectionnr) {
-    var section = 'section_' + sectionnr;
-    var cartocss = vsprintf('#rolling_blackout { [ %s_pct < 90] {polygon-fill: #FF0000; } [ %s_pct < 80] { polygon-fill: #00FF00} }', [section, section]);
+    var section = 'section_' + sectionnr + '_pct';
+    var cartocss = '#rolling_blackout { polygon-fill: #1a9850; polygon-opacity: 0.8; line-color: #333333; line-width: 0.5; line-opacity: 1; [' + section + ' = 100] { polygon-fill: #d73027; } [' + section + ' < 100] { polygon-fill: #f79272; } [' + section + ' < 80] { polygon-fill: #fed6b0; } [' + section + ' < 60] { polygon-fill: #fff2cc; } [' + section + ' < 40] { polygon-fill: #d2ecb4; } [' + section + ' < 20] { polygon-fill: #8cce8a; } [' + section + ' = 0] { polygon-fill: #1a9850; } }';
     window.mapLayer.setCartoCSS(cartocss);
 }
 
