@@ -27,14 +27,14 @@
 
     ```SQL
     ALTER TABLE rolling_blackout
-    ADD COLUMN all_sections numeric,
+    ADD COLUMN section_all numeric,
     ADD COLUMN section_1_pct numeric,
     ADD COLUMN section_2_pct numeric,
     ADD COLUMN section_3_pct numeric,
     ADD COLUMN section_4_pct numeric,
     ADD COLUMN section_5_pct numeric,
     ADD COLUMN section_6_pct numeric,
-    ADD COLUMN all_sections_pct numeric,
+    ADD COLUMN section_all_pct numeric,
     ADD COLUMN excluded_pct numeric,
     ADD COLUMN region text;
     
@@ -42,11 +42,11 @@
     RENAME COLUMN municipality_geojson TO municipality
     ```
 
-5. Populate `all_sections`:
+5. Populate `section_all`:
 
     ```SQL
     UPDATE rolling_blackout
-    SET all_sections =
+    SET section_all =
        coalesce(section_1, 0) + 
        coalesce(section_2, 0) + 
        coalesce(section_3, 0) + 
@@ -60,7 +60,7 @@
     ```SQL
     UPDATE rolling_blackout
     SET
-        all_sections_pct = round(coalesce(all_sections,0)/total*100,2),
+        section_all_pct = round(coalesce(section_all,0)/total*100,2),
         section_1_pct = round(coalesce(section_1,0)/total*100,2),
         section_2_pct = round(coalesce(section_2,0)/total*100,2),
         section_3_pct = round(coalesce(section_3,0)/total*100,2),
@@ -72,7 +72,7 @@
 
     UPDATE rolling_blackout
     SET
-        all_sections_pct = 0,
+        section_all_pct = 0,
         section_1_pct = 0,
         section_2_pct = 0,
         section_3_pct = 0,
