@@ -16,17 +16,15 @@
         <div class="container">
             <h2>Shut down a section</h2>
             
-            <div id="controls">
-                <form action="">
-                    <input type="radio" name="section" value="1">Section 1</input>
-                    <input type="radio" name="section" value="2">Section 2</input>
-                    <input type="radio" name="section" value="3">Section 3</input>
-                    <input type="radio" name="section" value="4">Section 4</input>
-                    <input type="radio" name="section" value="5">Section 5</input>
-                    <input type="radio" name="section" value="6">Section 6</input>
-                </form>
+            <div id="section-buttons" class="btn-group">
+                <button type="button" class="btn btn-default select-section" value="1">Section 1</button>
+                <button type="button" class="btn btn-default select-section" value="2">Section 2</button>
+                <button type="button" class="btn btn-default select-section" value="3">Section 3</button>
+                <button type="button" class="btn btn-default select-section" value="4">Section 4</button>
+                <button type="button" class="btn btn-default select-section" value="5">Section 5</button>
+                <button type="button" class="btn btn-default select-section" value="6">Section 6</button>
             </div>
-        
+            
             <div id="map"></div>
         </div>
 
@@ -35,6 +33,6 @@
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
         <script type="text/javascript" src="http://libs.cartocdn.com/cartodb.js/v3/cartodb.js"></script>
         <script type="text/javascript" src="js/sprintf.min.js"></script>
-        <script type="text/javascript" src="js/map.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
     </body>
 </html>
