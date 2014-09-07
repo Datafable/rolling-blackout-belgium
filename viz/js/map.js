@@ -52,12 +52,21 @@ function showBlackoutData(map) {
 	type: 'cartodb',
 	sublayers: [{
 	    sql: sql,
-	    cartocss: '#municipalities_blackout_pct { [excluded_pct > 90] {polygon-fill: #F0F0F0;} [excluded_pct < 90] {polygon-fill: #F0F0F0;} [excluded_pct < 80] {polygon-fill: #F0F000;} }'
+	    cartocss: '#municipalities_blackout_pct {polygon-fill: #F0F0F0;}'
 	}]
     })
     .addTo(map)
     .done(function(layer) {
+        console.log(layer)
         window.mapLayer = layer;
+        var sublayer = layer.getSubLayer(0);
+        sublayer.setInteraction(true);
+        sublayer.set({'interactivity': ['municipality', 'total', 'section_1']});
+        sublayer.on('featureClick', function(event, latlng, pos, data, layerindex) {
+            console.log(data);
+            $("#sidebar").append("<h1>" + data.municipality + "</h1>");
+            $("#sidebar").append("<p>Total number of cabins:" + data.total + "</p>");
+        });
     });
 };
 
