@@ -51,7 +51,7 @@ function drawMap() {
 function showBlackoutDataOnMap(map) {
     var sql = "SELECT * FROM public.rolling_blackout_by_municipality";
     var section = 'section_all_pct'
-    var cartocss = '#rolling_blackout { polygon-fill: #1a9850; polygon-opacity: 0.8; line-color: #333333; line-width: 0.5; line-opacity: 1; [' + section + ' = 100] { polygon-fill: #d73027; } [' + section + ' < 100] { polygon-fill: #f79272; } [' + section + ' < 80] { polygon-fill: #fed6b0; } [' + section + ' < 60] { polygon-fill: #fff2cc; } [' + section + ' < 40] { polygon-fill: #d2ecb4; } [' + section + ' < 20] { polygon-fill: #8cce8a; } [' + section + ' = 0] { polygon-fill: #1a9850; } }';
+    var cartocss = '#rolling_blackout_by_municipality { polygon-fill: #1a9850; polygon-opacity: 0.8; line-color: #333333; line-width: 0.5; line-opacity: 1; [' + section + ' = 100] { polygon-fill: #d73027; } [' + section + ' < 100] { polygon-fill: #f79272; } [' + section + ' < 80] { polygon-fill: #fed6b0; } [' + section + ' < 60] { polygon-fill: #fff2cc; } [' + section + ' < 40] { polygon-fill: #d2ecb4; } [' + section + ' < 20] { polygon-fill: #8cce8a; } [' + section + ' = 0] { polygon-fill: #1a9850; } }';
     cartodb.createLayer(map, {
         user_name: 'datafable',
         type: 'cartodb',
@@ -77,11 +77,18 @@ function showBlackoutDataOnMap(map) {
         ];
         sublayer.set({'interactivity': selectedFields});
         sublayer.on('featureClick', function(event, latlng, pos, data, layerindex) {
-            console.log(data);
             var sectionField = "section_" + window.selectedSection + "_pct";
+            var sql = "select district, section_1_pct, section_2_pct, section_3_pct, section_4_pct, section_5_pct, section_6_pct, section_all_pct from rolling_blackout where municipality_geojson='" + data.municipality + "';";
+            $("#sidebar").empty();
             $("#sidebar").append("<h1>" + data.municipality + "</h1>");
-            $("#sidebar").append("<h2>Percentage of cabins to be shut down in this section: " + data[sectionField] + "</h2>");
-            $("#sidebar").append("<p>Total number of cabins:" + data.total + "</p>");
+            $.get("http://datafable.cartodb.com/api/v2/sql?q=" + sql, function(data) {
+                console.log(data);
+                var tablerows = "";
+                _.each(data.rows, function(i) {
+                    tablerows = tablerows + "<tr><td>" + i.district + "</td><td>" + i.section_1_pct + "</td><td>" + i.section_2_pct + "</td><td>" + i.section_3_pct + "</td><td>" + i.section_4_pct + "</td><td>" + i.section_5_pct + "</td><td>" + i.section_6_pct + "</td><td>" + i.section_all_pct + "</td></tr>";
+                });
+                $("#sidebar").append("<table><tr><th>district</th><th>section 1</th><th>section 2</th><th>section 3</th><th>section 4</th><th>section 5</th><th>section 6</th><th>all sections</th></tr>" + tablerows + "</table>");
+            });
         });
     });
 };
