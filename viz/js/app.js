@@ -49,7 +49,7 @@ function drawMap() {
 };
 
 function showBlackoutDataOnMap(map) {
-    var sql = "SELECT * FROM public.rolling_blackout";
+    var sql = "SELECT * FROM public.rolling_blackout_by_municipality";
     var section = 'section_all_pct'
     var cartocss = '#rolling_blackout { polygon-fill: #1a9850; polygon-opacity: 0.8; line-color: #333333; line-width: 0.5; line-opacity: 1; [' + section + ' = 100] { polygon-fill: #d73027; } [' + section + ' < 100] { polygon-fill: #f79272; } [' + section + ' < 80] { polygon-fill: #fed6b0; } [' + section + ' < 60] { polygon-fill: #fff2cc; } [' + section + ' < 40] { polygon-fill: #d2ecb4; } [' + section + ' < 20] { polygon-fill: #8cce8a; } [' + section + ' = 0] { polygon-fill: #1a9850; } }';
     cartodb.createLayer(map, {
