@@ -3,5 +3,32 @@
 }
 
 #map {
+    background-color: rgb(229, 227, 223);
     height: 600px;
+}
+
+#info-panel {
+    }
+    #info-panel .metadata {
+        color: #777777;
+        font-size: 120%;
+    }
+    #info-panel table {
+        display: none;
+        }
+        #info-panel table th, #info-panel table td {
+            text-align: right;
+            }
+            #info-panel table th:first-child, #info-panel table td:first-child {
+                text-align: left;
+            }
+        #info-panel table .top-header th {
+            text-align: center;
+        }
+
+.footer {
+    border-top: 1px solid #e7e7e7;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    padding-top: 20px;
 }

@@ -56,14 +56,14 @@
     ```SQL
     UPDATE rolling_blackout
     SET
-        section_all_pct = round(coalesce(section_all,0)/total*100,2),
-        section_1_pct = round(coalesce(section_1,0)/total*100,2),
-        section_2_pct = round(coalesce(section_2,0)/total*100,2),
-        section_3_pct = round(coalesce(section_3,0)/total*100,2),
-        section_4_pct = round(coalesce(section_4,0)/total*100,2),
-        section_5_pct = round(coalesce(section_5,0)/total*100,2),
-        section_6_pct = round(coalesce(section_6,0)/total*100,2),
-        excluded_pct = round(coalesce(excluded,0)/total*100,2)
+        section_all_pct = round(coalesce(section_all,0)/total*100,0),
+        section_1_pct = round(coalesce(section_1,0)/total*100,0),
+        section_2_pct = round(coalesce(section_2,0)/total*100,0),
+        section_3_pct = round(coalesce(section_3,0)/total*100,0),
+        section_4_pct = round(coalesce(section_4,0)/total*100,0),
+        section_5_pct = round(coalesce(section_5,0)/total*100,0),
+        section_6_pct = round(coalesce(section_6,0)/total*100,0),
+        excluded_pct = round(coalesce(excluded,0)/total*100,0)
     WHERE total != 0;
 
     UPDATE rolling_blackout
@@ -99,6 +99,7 @@
         SELECT
             municipality,
             municipality_geojson,
+            sum(coalesce(section_all,0)) AS section_all,
             sum(total) AS total,
             CASE WHEN sum(total) != 0 THEN round(sum(coalesce(section_1,0))/sum(total)*100,2) ELSE 0 END AS section_1_pct,
             CASE WHEN sum(total) != 0 THEN round(sum(coalesce(section_2,0))/sum(total)*100,2) ELSE 0 END AS section_2_pct,

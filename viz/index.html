@@ -8,26 +8,64 @@
 
         <link rel="shortcut icon" href="">
         <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css">
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
     </head>
 
     <body>
-        <div class="container">
-            <h2>How does the rolling shutdown effect your municipality?</h2>
-            
-            <div id="section-buttons" class="btn-group">
-                <button type="button" class="btn btn-default select-section active" value="all">All sections</button>
-                <button type="button" class="btn btn-default select-section" value="1">Section 1</button>
-                <button type="button" class="btn btn-default select-section" value="2">Section 2</button>
-                <button type="button" class="btn btn-default select-section" value="3">Section 3</button>
-                <button type="button" class="btn btn-default select-section" value="4">Section 4</button>
-                <button type="button" class="btn btn-default select-section" value="5">Section 5</button>
-                <button type="button" class="btn btn-default select-section" value="6">Section 6</button>
+        <div class="viz">
+            <div class="container">
+                <div class="page-header">
+                <h1>How does the rolling blackout plan affect your municipality?</h1>
+                </div>
+                <div id="section-buttons" class="btn-group">
+                    <button type="button" class="btn btn-default select-section" value="1">Section 1</button>
+                    <button type="button" class="btn btn-default select-section" value="2">Section 2</button>
+                    <button type="button" class="btn btn-default select-section" value="3">Section 3</button>
+                    <button type="button" class="btn btn-default select-section" value="4">Section 4</button>
+                    <button type="button" class="btn btn-default select-section" value="5">Section 5</button>
+                    <button type="button" class="btn btn-default select-section" value="6">Section 6</button>
+                    <button type="button" class="btn btn-default select-section active" value="all">All sections</button>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div id="map"></div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div id="info-panel">
+                            <h2 id="municipality-name">Select your municipality on the map</h2>
+                            <p id="municipality-data" class="metadata">... to see how many power distribution cabinets are included in the rolling blackout plan.</p>
+                            <table id="district-data" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr class="top-header">
+                                        <th></th>
+                                        <th colspan="7">Sections</th>
+                                    </tr>
+                                    <tr>
+                                        <th>District</th>
+                                        <th class="section-1">1</th>
+                                        <th class="section-2">2</th>
+                                        <th class="section-3">3</th>
+                                        <th class="section-4">4</th>
+                                        <th class="section-5">5</th>
+                                        <th class="section-6">6</th>
+                                        <th class="section-all">all</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </div>
-            
-            <div id="map"></div>
-            <div id="sidebar"></div>
+
+            <div class="footer">
+                <div class="container">
+                    <p class="pull-left">Created by <a href="https://twitter.com/Datafable">Datafable</a></p>
+                    <p class="pull-right"><a href="https://github.com/Datafable/rolling-blackout-belgium">Source code and data</a></p>
+                </div>
+            </div>
         </div>
 
         <!-- Scripts -->
@@ -36,5 +74,15 @@
         <script type="text/javascript" src="http://libs.cartocdn.com/cartodb.js/v3/cartodb.js"></script>
         <script type="text/javascript" src="js/sprintf.min.js"></script>
         <script type="text/javascript" src="js/app.js"></script>
+
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-54642803-2', 'auto');
+            ga('send', 'pageview');
+        </script>
     </body>
 </html>
