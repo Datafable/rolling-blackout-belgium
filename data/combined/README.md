@@ -99,6 +99,7 @@
         SELECT
             municipality,
             municipality_geojson,
+            sum(coalesce(section_all,0)) AS section_all,
             sum(total) AS total,
             CASE WHEN sum(total) != 0 THEN round(sum(coalesce(section_1,0))/sum(total)*100,2) ELSE 0 END AS section_1_pct,
             CASE WHEN sum(total) != 0 THEN round(sum(coalesce(section_2,0))/sum(total)*100,2) ELSE 0 END AS section_2_pct,
