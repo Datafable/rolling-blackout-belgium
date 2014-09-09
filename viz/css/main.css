@@ -25,3 +25,10 @@
         #info-panel table .top-header th {
             text-align: center;
         }
+
+.footer {
+    border-top: 1px solid #e7e7e7;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
