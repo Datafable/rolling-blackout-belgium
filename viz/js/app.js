@@ -75,8 +75,12 @@ function showBlackoutDataOnMap(map) {
         sublayer.on("featureClick", function(event, latlng, pos, data, layerindex) {
             var sectionField = "section_" + window.selectedSection + "_pct";
             var sql = "SELECT district, section_1_pct, section_2_pct, section_3_pct, section_4_pct, section_5_pct, section_6_pct, section_all_pct FROM rolling_blackout WHERE municipality_geojson='" + data.municipality + "';";
+            
             $("#municipality-name").text(data.municipality);
             
+            var municipalityData = data.section_all + ' of the ' + data.total + ' power distribution cabinets (' + data.section_all_pct + '%) are included in the rolling blackout plan.';
+            $("#municipality-data").text(municipalityData);
+
             $("#districts-data").empty();
             $.get("http://datafable.cartodb.com/api/v2/sql?q=" + sql, function(data) {
                 var tablerows = "";

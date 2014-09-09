@@ -9,6 +9,10 @@
 
 #municipality-info {
     }
+    #municipality-info .metadata {
+        color: #777777;
+        font-size: 120%;
+    }
     #municipality-info table th, #municipality-info table td {
         text-align: right;
         }
