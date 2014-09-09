@@ -7,18 +7,21 @@
     height: 600px;
 }
 
-#municipality-info {
+#info-panel {
     }
-    #municipality-info .metadata {
+    #info-panel .metadata {
         color: #777777;
         font-size: 120%;
     }
-    #municipality-info table th, #municipality-info table td {
-        text-align: right;
+    #info-panel table {
+        display: none;
         }
-        #municipality-info table th:first-child, #municipality-info table td:first-child {
-            text-align: left;
+        #info-panel table th, #info-panel table td {
+            text-align: right;
+            }
+            #info-panel table th:first-child, #info-panel table td:first-child {
+                text-align: left;
+            }
+        #info-panel table .top-header th {
+            text-align: center;
         }
-    #municipality-info table .top-header th {
-        text-align: center;
-    }

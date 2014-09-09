@@ -81,13 +81,14 @@ function showBlackoutDataOnMap(map) {
             var municipalityData = data.section_all + ' of the ' + data.total + ' power distribution cabinets (' + data.section_all_pct + '%) are included in the rolling blackout plan.';
             $("#municipality-data").text(municipalityData);
 
-            $("#districts-data").empty();
+            $("#district-data").show();
+            $("#district-data tbody").empty();
             $.get("http://datafable.cartodb.com/api/v2/sql?q=" + sql, function(data) {
                 var tablerows = "";
                 _.each(data.rows, function(i) {
                     tablerows = tablerows + "<tr><td>" + i.district + "</td><td>" + i.section_1_pct + "%</td><td>" + i.section_2_pct + "%</td><td>" + i.section_3_pct + "%</td><td>" + i.section_4_pct + "%</td><td>" + i.section_5_pct + "%</td><td>" + i.section_6_pct + "%</td><th>" + i.section_all_pct + "%</th></tr>";
                 });
-                $("#districts-data").append(tablerows);
+                $("#district-data tbody").append(tablerows);
             });
         });
     });
