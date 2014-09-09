@@ -1,4 +1,6 @@
 var main = function() {
+    window.selectedSection = "all";
+
     // Draw map
     drawMap();
 
@@ -6,7 +8,7 @@ var main = function() {
     $(".select-section").click(function() {
         $(".select-section").removeClass("active")
         $(this).addClass("active");
-        window.selectedSection = this.value;
+        selectedSection = this.value;
         changeSectionOnMap();
     });
 };
@@ -73,7 +75,7 @@ function showBlackoutDataOnMap(map) {
         ];
         sublayer.set({"interactivity": selectedFields});
         sublayer.on("featureClick", function(event, latlng, pos, data, layerindex) {
-            var sectionField = "section_" + window.selectedSection + "_pct";
+            var sectionField = "section_" + selectedSection + "_pct";
             var sql = "SELECT district, section_1_pct, section_2_pct, section_3_pct, section_4_pct, section_5_pct, section_6_pct, section_all_pct FROM rolling_blackout WHERE municipality_geojson='" + data.municipality + "';";
             
             $("#municipality-name").text(data.municipality);
@@ -86,9 +88,10 @@ function showBlackoutDataOnMap(map) {
             $.get("http://datafable.cartodb.com/api/v2/sql?q=" + sql, function(data) {
                 var tablerows = "";
                 _.each(data.rows, function(i) {
-                    tablerows = tablerows + "<tr><td>" + i.district + "</td><td>" + i.section_1_pct + "%</td><td>" + i.section_2_pct + "%</td><td>" + i.section_3_pct + "%</td><td>" + i.section_4_pct + "%</td><td>" + i.section_5_pct + "%</td><td>" + i.section_6_pct + "%</td><th>" + i.section_all_pct + "%</th></tr>";
+                    tablerows = tablerows + "<tr><td>" + i.district + "</td><td class=\"section-1\">" + i.section_1_pct + "%</td><td class=\"section-2\">" + i.section_2_pct + "%</td><td class=\"section-3\">" + i.section_3_pct + "%</td><td class=\"section-4\">" + i.section_4_pct + "%</td><td class=\"section-5\">" + i.section_5_pct + "%</td><td class=\"section-6\">" + i.section_6_pct + "%</td><th class=\"section-all\">" + i.section_all_pct + "%</th></tr>";
                 });
                 $("#district-data tbody").append(tablerows);
+                highlightSectionInTable();
             });
         });
     });
@@ -98,6 +101,14 @@ function changeSectionOnMap() {
     var section = "section_" + window.selectedSection + "_pct";
     var cartocss = "#rolling_blackout { polygon-fill: #1a9850; polygon-opacity: 0.8; line-color: #333333; line-width: 0.5; line-opacity: 1; } #rolling_blackout[" + section + " = 100] { polygon-fill: #d73027; } #rolling_blackout[" + section + " < 100] { polygon-fill: #f79272; } #rolling_blackout[" + section + " < 80] { polygon-fill: #fed6b0; } #rolling_blackout[" + section + " < 60] { polygon-fill: #fff2cc; } #rolling_blackout[" + section + " < 40] { polygon-fill: #d2ecb4; } #rolling_blackout[" + section + " < 20] { polygon-fill: #8cce8a; } #rolling_blackout[" + section + " = 0] { polygon-fill: #1a9850; }";
     window.mapLayer.setCartoCSS(cartocss);
+    highlightSectionInTable();
+}
+
+function highlightSectionInTable() {
+    var section = ".section-" + window.selectedSection;
+    $("#district-data th").removeClass("info");
+    $("#district-data td").removeClass("info");
+    $(section).addClass("info");
 }
 
 $(document).ready(main);
