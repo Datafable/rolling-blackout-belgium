@@ -49,9 +49,12 @@ function drawMap() {
 };
 
 function showBlackoutDataOnMap(map) {
-    var sql = "SELECT * FROM public.rolling_blackout";
+    var sql = 'WITH rolling_blackout_by_municipality AS (SELECT municipality, municipality_geojson, sum(total) AS total, CASE WHEN sum(total) != 0 THEN round(sum(coalesce(section_1,0))/sum(total)*100,2) ELSE 0 END AS section_1_pct, CASE WHEN sum(total) != 0 THEN round(sum(coalesce(section_2,0))/sum(total)*100,2) ELSE 0 END AS section_2_pct, CASE WHEN sum(total) != 0 THEN round(sum(coalesce(section_3,0))/sum(total)*100,2) ELSE 0 END AS section_3_pct, CASE WHEN sum(total) != 0 THEN round(sum(coalesce(section_4,0))/sum(total)*100,2) ELSE 0 END AS section_4_pct, CASE WHEN sum(total) != 0 THEN round(sum(coalesce(section_5,0))/sum(total)*100,2) ELSE 0 END AS section_5_pct, CASE WHEN sum(total) != 0 THEN round(sum(coalesce(section_6,0))/sum(total)*100,2) ELSE 0 END AS section_6_pct, CASE WHEN sum(total) != 0 THEN round(sum(coalesce(section_all,0))/sum(total)*100,2) ELSE 0 END AS section_all_pct FROM rolling_blackout GROUP BY municipality, municipality_geojson ) SELECT m.cartodb_id, m.the_geom, m.the_geom_webmercator, m.region, b.* FROM rolling_blackout_by_municipality b LEFT JOIN municipalities_belgium m ON b.municipality_geojson = m.name ORDER BY b.municipality';
+    
     var section = 'section_all_pct'
-    var cartocss = '#rolling_blackout { polygon-fill: #1a9850; polygon-opacity: 0.8; line-color: #333333; line-width: 0.5; line-opacity: 1; [' + section + ' = 100] { polygon-fill: #d73027; } [' + section + ' < 100] { polygon-fill: #f79272; } [' + section + ' < 80] { polygon-fill: #fed6b0; } [' + section + ' < 60] { polygon-fill: #fff2cc; } [' + section + ' < 40] { polygon-fill: #d2ecb4; } [' + section + ' < 20] { polygon-fill: #8cce8a; } [' + section + ' = 0] { polygon-fill: #1a9850; } }';
+    var cartocss = '#rolling_blackout { polygon-fill: #1a9850; polygon-opacity: 0.8; line-color: #333333; line-width: 0.5; line-opacity: 1; } #rolling_blackout[' + section + ' = 100] { polygon-fill: #d73027; } #rolling_blackout[' + section + ' < 100] { polygon-fill: #f79272; } #rolling_blackout[' + section + ' < 80] { polygon-fill: #fed6b0; } #rolling_blackout[' + section + ' < 60] { polygon-fill: #fff2cc; } #rolling_blackout[' + section + ' < 40] { polygon-fill: #d2ecb4; } #rolling_blackout[' + section + ' < 20] { polygon-fill: #8cce8a; } #rolling_blackout[' + section + ' = 0] { polygon-fill: #1a9850; }';
+    console.log(cartocss);
+
     cartodb.createLayer(map, {
         user_name: 'datafable',
         type: 'cartodb',
@@ -88,7 +91,8 @@ function showBlackoutDataOnMap(map) {
 
 function changeSectionOnMap() {
     var section = 'section_' + window.selectedSection + '_pct';
-    var cartocss = '#rolling_blackout { polygon-fill: #1a9850; polygon-opacity: 0.8; line-color: #333333; line-width: 0.5; line-opacity: 1; [' + section + ' = 100] { polygon-fill: #d73027; } [' + section + ' < 100] { polygon-fill: #f79272; } [' + section + ' < 80] { polygon-fill: #fed6b0; } [' + section + ' < 60] { polygon-fill: #fff2cc; } [' + section + ' < 40] { polygon-fill: #d2ecb4; } [' + section + ' < 20] { polygon-fill: #8cce8a; } [' + section + ' = 0] { polygon-fill: #1a9850; } }';
+    console.log('test');
+    var cartocss = '#rolling_blackout { polygon-fill: #1a9850; polygon-opacity: 0.8; line-color: #333333; line-width: 0.5; line-opacity: 1; } #rolling_blackout[' + section + ' = 100] { polygon-fill: #d73027; } #rolling_blackout[' + section + ' < 100] { polygon-fill: #f79272; } #rolling_blackout[' + section + ' < 80] { polygon-fill: #fed6b0; } #rolling_blackout[' + section + ' < 60] { polygon-fill: #fff2cc; } #rolling_blackout[' + section + ' < 40] { polygon-fill: #d2ecb4; } #rolling_blackout[' + section + ' < 20] { polygon-fill: #8cce8a; } #rolling_blackout[' + section + ' = 0] { polygon-fill: #1a9850; }';
     window.mapLayer.setCartoCSS(cartocss);
 }
 
