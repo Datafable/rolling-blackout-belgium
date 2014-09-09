@@ -8,13 +8,13 @@
 
         <link rel="shortcut icon" href="">
         <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css">
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
     </head>
 
     <body>
         <div class="container">
-            <h2>How does the rolling shutdown effect your municipality?</h2>
+            <h1>How does the rolling shutdown effect your municipality?</h1>
             
             <div id="section-buttons" class="btn-group">
                 <button type="button" class="btn btn-default select-section active" value="all">All sections</button>
@@ -26,8 +26,38 @@
                 <button type="button" class="btn btn-default select-section" value="6">Section 6</button>
             </div>
             
-            <div id="map"></div>
-            <div id="sidebar"></div>
+            <div class="row">
+                <div class="col-lg-8">
+                    <div id="map"></div>
+                </div>
+                <div class="col-lg-4">
+                    <div id="municipality-info">
+                        <h2 id="municipality-name">Havelange</h2>
+                        <p>Percentage of power distribution booths to be shut down per district, per section:</p>
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr class="top-header">
+                                    <th></th>
+                                    <th colspan="7">Sections</th>
+                                </tr>
+                                <tr>
+                                    <th>District</th>
+                                    <th>1</th>
+                                    <th>2</th>
+                                    <th>3</th>
+                                    <th>4</th>
+                                    <th>5</th>
+                                    <th>6</th>
+                                    <th>all</th>
+                                </tr>
+                            </thead>
+                            <tbody id="districts-data">
+                                <tr><td>Barvaux-Condroz</td><td>0</td><td>0</td><td>0</td><td>100</td><td>0</td><td>0</td><td>100</td></tr><tr><td>Flostoy</td><td>0</td><td>0</td><td>0</td><td>100</td><td>0</td><td>0</td><td>100</td></tr><tr><td>Havelange</td><td>0</td><td>0</td><td>0</td><td>100</td><td>0</td><td>0</td><td>100</td></tr><tr><td>Jeneffe</td><td>0</td><td>0</td><td>0</td><td>100</td><td>0</td><td>0</td><td>100</td></tr><tr><td>Maffe</td><td>0</td><td>0</td><td>0</td><td>100</td><td>0</td><td>0</td><td>100</td></tr><tr><td>Méan</td><td>0</td><td>0</td><td>0</td><td>100</td><td>0</td><td>0</td><td>100</td></tr><tr><td>Miécret</td><td>0</td><td>0</td><td>0</td><td>100</td><td>0</td><td>0</td><td>100</td></tr><tr><td>Porcheresse</td><td>0</td><td>0</td><td>0</td><td>100</td><td>0</td><td>0</td><td>100</td></tr><tr><td>Verlée</td><td>0</td><td>0</td><td>0</td><td>100</td><td>0</td><td>0</td><td>100</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Scripts -->

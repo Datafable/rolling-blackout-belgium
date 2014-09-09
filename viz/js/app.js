@@ -79,14 +79,15 @@ function showBlackoutDataOnMap(map) {
         sublayer.on('featureClick', function(event, latlng, pos, data, layerindex) {
             var sectionField = "section_" + window.selectedSection + "_pct";
             var sql = "SELECT district, section_1_pct, section_2_pct, section_3_pct, section_4_pct, section_5_pct, section_6_pct, section_all_pct FROM rolling_blackout WHERE municipality_geojson='" + data.municipality + "';";
-            $("#sidebar").empty();
-            $("#sidebar").append("<h1>" + data.municipality + "</h1>");
+            $("#municipality-name").text(data.municipality);
+            
+            $("#districts-data").empty();
             $.get("http://datafable.cartodb.com/api/v2/sql?q=" + sql, function(data) {
                 var tablerows = "";
                 _.each(data.rows, function(i) {
-                    tablerows = tablerows + "<tr><td>" + i.district + "</td><td>" + i.section_1_pct + "</td><td>" + i.section_2_pct + "</td><td>" + i.section_3_pct + "</td><td>" + i.section_4_pct + "</td><td>" + i.section_5_pct + "</td><td>" + i.section_6_pct + "</td><td>" + i.section_all_pct + "</td></tr>";
+                    tablerows = tablerows + "<tr><td>" + i.district + "</td><td>" + i.section_1_pct + "%</td><td>" + i.section_2_pct + "%</td><td>" + i.section_3_pct + "%</td><td>" + i.section_4_pct + "%</td><td>" + i.section_5_pct + "%</td><td>" + i.section_6_pct + "%</td><th>" + i.section_all_pct + "%</th></tr>";
                 });
-                $("#sidebar").append("<table><tr><th>district</th><th>section 1</th><th>section 2</th><th>section 3</th><th>section 4</th><th>section 5</th><th>section 6</th><th>all sections</th></tr>" + tablerows + "</table>");
+                $("#districts-data").append(tablerows);
             });
         });
     });

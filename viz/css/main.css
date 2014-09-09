@@ -3,5 +3,18 @@
 }
 
 #map {
+    background-color: rgb(229, 227, 223);
     height: 600px;
 }
+
+#municipality-info {
+    }
+    #municipality-info table th, #municipality-info table td {
+        text-align: right;
+        }
+        #municipality-info table th:first-child, #municipality-info table td:first-child {
+            text-align: left;
+        }
+    #municipality-info table .top-header th {
+        text-align: center;
+    }
