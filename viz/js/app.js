@@ -78,11 +78,10 @@ function showBlackoutDataOnMap(map) {
         sublayer.set({'interactivity': selectedFields});
         sublayer.on('featureClick', function(event, latlng, pos, data, layerindex) {
             var sectionField = "section_" + window.selectedSection + "_pct";
-            var sql = "select district, section_1_pct, section_2_pct, section_3_pct, section_4_pct, section_5_pct, section_6_pct, section_all_pct from rolling_blackout where municipality_geojson='" + data.municipality + "';";
+            var sql = "SELECT district, section_1_pct, section_2_pct, section_3_pct, section_4_pct, section_5_pct, section_6_pct, section_all_pct FROM rolling_blackout WHERE municipality_geojson='" + data.municipality + "';";
             $("#sidebar").empty();
             $("#sidebar").append("<h1>" + data.municipality + "</h1>");
             $.get("http://datafable.cartodb.com/api/v2/sql?q=" + sql, function(data) {
-                console.log(data);
                 var tablerows = "";
                 _.each(data.rows, function(i) {
                     tablerows = tablerows + "<tr><td>" + i.district + "</td><td>" + i.section_1_pct + "</td><td>" + i.section_2_pct + "</td><td>" + i.section_3_pct + "</td><td>" + i.section_4_pct + "</td><td>" + i.section_5_pct + "</td><td>" + i.section_6_pct + "</td><td>" + i.section_all_pct + "</td></tr>";
@@ -95,7 +94,6 @@ function showBlackoutDataOnMap(map) {
 
 function changeSectionOnMap() {
     var section = 'section_' + window.selectedSection + '_pct';
-    console.log('test');
     var cartocss = '#rolling_blackout { polygon-fill: #1a9850; polygon-opacity: 0.8; line-color: #333333; line-width: 0.5; line-opacity: 1; } #rolling_blackout[' + section + ' = 100] { polygon-fill: #d73027; } #rolling_blackout[' + section + ' < 100] { polygon-fill: #f79272; } #rolling_blackout[' + section + ' < 80] { polygon-fill: #fed6b0; } #rolling_blackout[' + section + ' < 60] { polygon-fill: #fff2cc; } #rolling_blackout[' + section + ' < 40] { polygon-fill: #d2ecb4; } #rolling_blackout[' + section + ' < 20] { polygon-fill: #8cce8a; } #rolling_blackout[' + section + ' = 0] { polygon-fill: #1a9850; }';
     window.mapLayer.setCartoCSS(cartocss);
 }
