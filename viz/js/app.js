@@ -14,39 +14,14 @@ var main = function() {
 };
 
 function drawMap() {
-    window.map;
-    var MAPTYPE_ID = "custom_style";
-    var mapStyle = [
-        { "featureType": "water", "elementType": "geometry", "stylers": [ { "color": "#000000" }, { "lightness": 17 } ] },
-        { "featureType": "landscape", "elementType": "geometry", "stylers": [ { "color": "#000000" }, { "lightness": 20 } ] },
-        { "featureType": "road.highway", "elementType": "geometry.fill", "stylers": [ { "color": "#000000" }, { "lightness": 17 } ] },
-        { "featureType": "road.highway", "elementType": "geometry.stroke", "stylers": [ { "color": "#000000" }, { "lightness": 29 }, { "weight": 0.2 } ] },
-        { "featureType": "road.arterial", "elementType": "geometry", "stylers": [ { "color": "#000000" }, { "lightness": 18 } ] },
-        { "featureType": "road.local", "elementType": "geometry", "stylers": [ { "color": "#000000" }, { "lightness": 16 } ] },
-        { "featureType": "poi", "elementType": "geometry", "stylers": [ { "color": "#000000" }, { "lightness": 21 } ] },
-        { "elementType": "labels.text.stroke", "stylers": [ { "visibility": "on" }, { "color": "#000000" }, { "lightness": 16 } ] },
-        { "mapType": "Map", "elementType": "labels.text.fill", "stylers": [ { "saturation": 36 }, { "color": "#000000" }, { "lightness": 40 } ] },
-        { "elementType": "labels.icon", "stylers": [ { "visibility": "off" } ] },
-        { "featureType": "transit", "elementType": "geometry", "stylers": [ { "color": "#000000" }, { "lightness": 19 } ] },
-        { "featureType": "administrative", "elementType": "geometry.fill", "stylers": [ { "color": "#000000" }, { "lightness": 20 } ] },
-        { "featureType": "administrative", "elementType": "geometry.stroke", "stylers": [ { "color": "#000000" }, { "lightness": 17 }, { "weight": 1.2 } ] }
-    ];
-    var featureOpts = mapStyle;
-    var mapOptions = {
-        zoom: 8,
-        center: new google.maps.LatLng(50.52,4.5),
-        mapTypeControlOptions: {
-            mapTypeIds: [google.maps.MapTypeId.ROADMAP, google.maps.MapTypeId.HYBRID, MAPTYPE_ID]
-        },
-        mapTypeId: MAPTYPE_ID
-    };
-
-    window.map = new google.maps.Map(document.getElementById("map"),  mapOptions);
-    var styledMapOptions = {
-        name: "Custom Style"
-    };
-    var customMapType = new google.maps.StyledMapType(featureOpts, styledMapOptions);
-    window.map.mapTypes.set(MAPTYPE_ID, customMapType);
+    window.map = L.map('map', {
+        center: [50.52, 4.5],
+        zoom: 8
+    });
+    var osm = L.tileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: "thanks",
+        maxZoom: 18
+    }).addTo(map);
     showBlackoutDataOnMap(window.map);
 };
 
