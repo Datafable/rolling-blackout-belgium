@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Rolling blackout Belgium</title>
+        <title data-i18n="html.title">Rolling blackout Belgium</title>
         <meta name="author" content="Datafable">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -17,17 +17,17 @@
             <div class="container">
 
                 <div class="page-header">
-                <h1>How does the rolling blackout plan affect your municipality?</h1>
+                <h1 data-i18n="site.title">How does the rolling blackout plan affect your municipality?</h1>
                 </div>
 
                 <div id="section-buttons" class="btn-group">
-                    <button type="button" class="btn btn-default select-section" value="1">Section 1</button>
-                    <button type="button" class="btn btn-default select-section" value="2">Section 2</button>
-                    <button type="button" class="btn btn-default select-section" value="3">Section 3</button>
-                    <button type="button" class="btn btn-default select-section" value="4">Section 4</button>
-                    <button type="button" class="btn btn-default select-section" value="5">Section 5</button>
-                    <button type="button" class="btn btn-default select-section" value="6">Section 6</button>
-                    <button type="button" class="btn btn-default select-section active" value="all">All sections</button>
+                    <button type="button" class="btn btn-default select-section" value="1" data-i18n="button.section.1">Section 1</button>
+                    <button type="button" class="btn btn-default select-section" value="2" data-i18n="button.section.2">Section 2</button>
+                    <button type="button" class="btn btn-default select-section" value="3" data-i18n="button.section.3">Section 3</button>
+                    <button type="button" class="btn btn-default select-section" value="4" data-i18n="button.name.4">Section 4</button>
+                    <button type="button" class="btn btn-default select-section" value="5" data-i18n="button.name.5">Section 5</button>
+                    <button type="button" class="btn btn-default select-section" value="6" data-i18n="button.name.6">Section 6</button>
+                    <button type="button" class="btn btn-default select-section active" value="all" data-i18n="button.section.all">All sections</button>
                 </div>
                 
                 <div class="row">
@@ -39,23 +39,23 @@
                     <div class="col-lg-4">
 
                         <div id="info-panel">
-                            <h2 id="municipality-name">Select your municipality on the map</h2>
-                            <p id="municipality-data" class="metadata">... to see how many power distribution cabinets are included in the rolling blackout plan.</p>
+                            <h2 id="municipality-name" data-i18n="info-panel.default.title">Select your municipality on the map</h2>
+                            <p id="municipality-data" class="metadata" data-i18n="info-panel.default.subtitle">... to see how many power distribution cabinets are included in the rolling blackout plan.</p>
                             <table id="district-data" class="table table-bordered table-striped">
                                 <thead>
                                     <tr class="top-header">
                                         <th></th>
-                                        <th colspan="7">Sections</th>
+                                        <th colspan="7" data-i18n="info-panel.table.top-header">Sections</th>
                                     </tr>
                                     <tr>
-                                        <th>District</th>
+                                        <th data-i18n="info-panel.table.district">District</th>
                                         <th class="section-1">1</th>
                                         <th class="section-2">2</th>
                                         <th class="section-3">3</th>
                                         <th class="section-4">4</th>
                                         <th class="section-5">5</th>
                                         <th class="section-6">6</th>
-                                        <th class="section-all">all</th>
+                                        <th class="section-all" data-i18n="info-panel.table.all-sections">all</th>
                                     </tr>
                                 </thead>
                                 <tbody></tbody>
@@ -69,8 +69,8 @@
         
         <div class="footer">
             <div class="container">
-                <p class="pull-left">Created by <a href="https://twitter.com/Datafable">Datafable</a></p>
-                <p class="pull-right"><a href="https://github.com/Datafable/rolling-blackout-belgium">Source code and data</a></p>
+                <p class="pull-left"><span data-i18n="footer.created-by">Created by</span> <a href="https://twitter.com/Datafable">Datafable</a></p>
+                <p class="pull-right"><a href="https://github.com/Datafable/rolling-blackout-belgium" data-i18n="footer.source-code">Source code and data</a></p>
             </div>
         </div>
 
@@ -78,6 +78,7 @@
         <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
         <script type="text/javascript" src="http://libs.cartocdn.com/cartodb.js/v3/cartodb.js"></script>
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/i18next/1.6.3/i18next-1.6.3.min.js"></script>
         <script type="text/javascript" src="js/sprintf.min.js"></script>
         <script type="text/javascript" src="js/app.js"></script>
 

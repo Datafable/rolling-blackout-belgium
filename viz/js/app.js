@@ -1,4 +1,11 @@
 var main = function() {
+
+    // Load language
+    $.i18n.init({ lng: 'nl', lngWhitelist: ['en', 'nl', 'fr'], fallbackLng: 'nl' }, function(t) {
+        $("html").i18n(); // Set language for all elements with a data-i18n attribute
+    });
+
+    // Set default section
     window.selectedSection = "all";
 
     // Draw map
@@ -8,7 +15,7 @@ var main = function() {
     $(".select-section").click(function() {
         $(".select-section").removeClass("active")
         $(this).addClass("active");
-        selectedSection = this.value;
+        window.selectedSection = this.value;
         changeSectionOnMap();
     });
 };
