@@ -95,9 +95,20 @@ function showBlackoutDataOnMap(map) {
                             var openTag = "<td>";
                             var closeTag = "</td>";
                         } else if (index == 7) {
+                            if (value == "0") {
+                                value = "-";
+                            } else {
+                                value = value + "%";
+                            }
                             var openTag = "<th class=\"section-all\">";
                             var closeTag = "</th>";
                         } else {
+                            if (value == "0") {
+                                value = "-";
+                            } else {
+                                value = value + "%";
+                            }
+                            var openTag = "<th class=\"section-all\">";
                             var openTag = "<td class=\"section-" + index + "\">";
                             var closeTag = "</td>";
                         }
