@@ -26,7 +26,7 @@ function drawMap() {
         zoom: 8
     });
     var osm = L.tileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        attribution: "thanks",
+        attribution: "Open Street Map",
         maxZoom: 18
     }).addTo(map);
     showBlackoutDataOnMap(window.map);
@@ -94,7 +94,6 @@ function showMunicipalityInfo(data) {
                     } else {
                         value = value + "%";
                     }
-                    var openTag = "<th class=\"section-all\">";
                     var openTag = "<td class=\"section-" + index + "\">";
                     var closeTag = "</td>";
                 }
