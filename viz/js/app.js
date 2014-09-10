@@ -1,8 +1,15 @@
 var main = function() {
 
     // Load language
-    $.i18n.init({ lng: 'nl', lngWhitelist: ['en', 'nl', 'fr'], fallbackLng: 'nl' }, function(t) {
-        $("html").i18n(); // Set language for all elements with a data-i18n attribute
+    $.i18n.init({
+        lng: 'en',
+        debug: true,
+        lngWhitelist: ['en', 'nl', 'fr'],
+        fallbackLng: 'en',
+        resGetPath: "locale/translation-__lng__.json"
+    },
+    function(t) {
+        translate();
     });
 
     // Set default section
@@ -18,7 +25,20 @@ var main = function() {
         window.selectedSection = this.value;
         changeSectionOnMap();
     });
+
+    // Select language
+    $("#language-selection li").click(function() {
+        $("#language-selection li").removeClass("active")
+        $(this).addClass("active");
+        $.i18n.setLng(this.id,function(t){
+            translate();    
+        });
+    });
 };
+
+function translate() {
+    $("html").i18n(); // Set language for all elements with a data-i18n attribute
+}
 
 function drawMap() {
     window.map = L.map('map', {

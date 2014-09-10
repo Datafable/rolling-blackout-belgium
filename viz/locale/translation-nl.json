@@ -1,6 +1,11 @@
 {
     "html": {
-"title": "Afschakelplan België"
+        "title": "Afschakelplan België"
+    },
+    "language": {
+        "en": "Engels",
+        "nl": "Nederlands",
+        "fr": "Frans"
     },
     "site": {
         "title": "Zit je (deel)gemeente in het afschakelplan?"
