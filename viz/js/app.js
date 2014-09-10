@@ -88,7 +88,23 @@ function showBlackoutDataOnMap(map) {
             $.get("http://datafable.cartodb.com/api/v2/sql?q=" + sql, function(data) {
                 var tablerows = "";
                 _.each(data.rows, function(i) {
-                    tablerows = tablerows + "<tr><td>" + i.district + "</td><td class=\"section-1\">" + i.section_1_pct + "%</td><td class=\"section-2\">" + i.section_2_pct + "%</td><td class=\"section-3\">" + i.section_3_pct + "%</td><td class=\"section-4\">" + i.section_4_pct + "%</td><td class=\"section-5\">" + i.section_5_pct + "%</td><td class=\"section-6\">" + i.section_6_pct + "%</td><th class=\"section-all\">" + i.section_all_pct + "%</th></tr>";
+                    var rowValues = [i.district, i.section_1_pct, i.section_2_pct, i.section_3_pct, i.section_4_pct, i.section_5_pct, i.section_6_pct, i.section_all_pct];
+                    var tableRow = ["<tr>"];
+                    _.each(rowValues, function(value, index) {
+                        if (index == 0) {
+                            var openTag = "<td>";
+                            var closeTag = "</td>";
+                        } else if (index == 7) {
+                            var openTag = "<th class=\"section-all\">";
+                            var closeTag = "</th>";
+                        } else {
+                            var openTag = "<td class=\"section-" + index + "\">";
+                            var closeTag = "</td>";
+                        }
+                        tableRow.push(openTag + value + closeTag);
+                    });
+                    tableRow.push("</tr>");
+                    tablerows = tablerows + tableRow.join("");
                 });
                 $("#district-data tbody").append(tablerows);
                 highlightSectionInTable();
