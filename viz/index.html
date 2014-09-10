@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title data-i18n="html.title">Belgian rolling blackout plan</title>
+        <title data-i18n="html.title">Rolling blackout plan in Belgium</title>
         <meta name="author" content="Datafable">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -57,27 +57,33 @@
                     <div class="col-lg-4">
 
                         <div id="info-panel">
-                            <h2 id="municipality-name" data-i18n="info-panel.default.title">Select your municipality on the map</h2>
-                            <p id="municipality-data" class="metadata" data-i18n="info-panel.default.subtitle">... to see how many power distribution cabinets are included in the rolling blackout plan.</p>
-                            <table id="district-data" class="table table-bordered table-striped">
-                                <thead>
-                                    <tr class="top-header">
-                                        <th></th>
-                                        <th colspan="7" data-i18n="info-panel.table.top-header">Sections</th>
-                                    </tr>
-                                    <tr>
-                                        <th data-i18n="info-panel.table.district">District</th>
-                                        <th class="section-1">1</th>
-                                        <th class="section-2">2</th>
-                                        <th class="section-3">3</th>
-                                        <th class="section-4">4</th>
-                                        <th class="section-5">5</th>
-                                        <th class="section-6">6</th>
-                                        <th class="section-all" data-i18n="info-panel.table.all-sections">all</th>
-                                    </tr>
-                                </thead>
-                                <tbody></tbody>
-                            </table>
+                            <div class="default">
+                                <h2 data-i18n="info-panel.title">Select your municipality on the map</h2>
+                                <p data-i18n="info-panel.subtitle">... to see how many power distribution cabinets are included in the rolling blackout plan.</p>
+                            </div>
+                            <div class="selected">
+                                <h2 id="municipality-name"></h2>
+                                <p id="municipality-data"></p>
+                                <table id="district-data" class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr class="top-header">
+                                            <th></th>
+                                            <th colspan="7" data-i18n="info-panel.table.top-header">Sections</th>
+                                        </tr>
+                                        <tr>
+                                            <th data-i18n="info-panel.table.district">District</th>
+                                            <th class="section-1">1</th>
+                                            <th class="section-2">2</th>
+                                            <th class="section-3">3</th>
+                                            <th class="section-4">4</th>
+                                            <th class="section-5">5</th>
+                                            <th class="section-6">6</th>
+                                            <th class="section-all" data-i18n="info-panel.table.all-sections">all</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
                         </div>
 
                     </div>

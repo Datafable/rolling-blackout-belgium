@@ -86,10 +86,12 @@ function showBlackoutDataOnMap(map) {
 function showMunicipalityInfo(data) {
     var sectionField = "section_" + selectedSection + "_pct";
     var sql = "SELECT district, section_1_pct, section_2_pct, section_3_pct, section_4_pct, section_5_pct, section_6_pct, section_all_pct FROM rolling_blackout WHERE municipality='" + data.municipality + "';";
+    $("#info-panel .default").hide()
+    $("#info-panel .selected").show();
     $("#municipality-name").text(data.municipality);
-    var municipalityData = data.section_all + ' of the ' + data.total + ' power distribution cabinets (' + data.section_all_pct + '%) are included in the rolling blackout plan.';
+    
+    var municipalityData = $.i18n.t("info-panel.municipality-data", { part: data.section_all, total: data.total, percentage: data.section_all_pct });
     $("#municipality-data").text(municipalityData);
-    $("#district-data").show();
     $("#district-data tbody").empty();
     $.get("http://datafable.cartodb.com/api/v2/sql?q=" + sql, function(data) {
         var tablerows = "";
