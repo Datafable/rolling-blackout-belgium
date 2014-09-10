@@ -24,7 +24,9 @@
     "info-panel": {
         "title": "Sélectionnez votre municipalité sur la carte",
         "subtitle": "... pour voir combien de cabines de distribution sont inclus dans le plan de délestage.",
-        "municipality-data": "__part__ des __total__ cabines de distribution (__percentage__%) sont inclus dans le plan de délestage.",
+        "sentence-1": "des",
+        "sentence-2": "cabines de distribution",
+        "sentence-3": "sont inclus dans le plan de délestage.",
         "table": {
             "top-header": "Tranches",
             "district": "Localité",

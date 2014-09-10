@@ -24,7 +24,9 @@
     "info-panel": {
         "title": "Select your municipality on the map",
         "subtitle": "... to see how many power distribution cabinets are included in the rolling blackout plan.",
-        "municipality-data": "__part__ of the __total__ power distribution cabinets (__percentage__%) are included in the rolling blackout plan.",
+        "sentence-1": "of the",
+        "sentence-2": "power distribution cabinets",
+        "sentence-3": "are included in the rolling blackout plan.",
         "table": {
             "top-header": "Sections",
             "district": "District",

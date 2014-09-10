@@ -24,7 +24,9 @@
     "info-panel": {
         "title": "Selecteer je gemeente op de kaart",
         "subtitle": "... om te zien hoeveel distributiecabines opgenomen zijn in het afschakelplan.",
-        "municipality-data": "__part__ van de __total__ distributiecabines (__percentage__%) zijn opgenomen in het afschakelplan.",
+        "sentence-1": "van de",
+        "sentence-2": "distributiecabines",
+        "sentence-3": "zijn opgenomen in het afschakelplan.",
         "table": {
             "top-header": "Schijven",
             "district": "Deelgemeente",

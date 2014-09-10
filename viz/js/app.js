@@ -88,10 +88,13 @@ function showMunicipalityInfo(data) {
     var sql = "SELECT district, section_1_pct, section_2_pct, section_3_pct, section_4_pct, section_5_pct, section_6_pct, section_all_pct FROM rolling_blackout WHERE municipality='" + data.municipality + "';";
     $("#info-panel .default").hide()
     $("#info-panel .selected").show();
+
     $("#municipality-name").text(data.municipality);
-    
-    var municipalityData = $.i18n.t("info-panel.municipality-data", { part: data.section_all, total: data.total, percentage: data.section_all_pct });
-    $("#municipality-data").text(municipalityData);
+    $("#part").text(data.section_all);
+    console.log(data.section_all)
+    $("#total").text(data.total);
+    $("#percentage").text(data.section_all_pct);
+
     $("#district-data tbody").empty();
     $.get("http://datafable.cartodb.com/api/v2/sql?q=" + sql, function(data) {
         var tablerows = "";
