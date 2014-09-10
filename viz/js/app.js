@@ -76,7 +76,7 @@ function showBlackoutDataOnMap(map) {
         sublayer.set({"interactivity": selectedFields});
         sublayer.on("featureClick", function(event, latlng, pos, data, layerindex) {
             var sectionField = "section_" + selectedSection + "_pct";
-            var sql = "SELECT district, section_1_pct, section_2_pct, section_3_pct, section_4_pct, section_5_pct, section_6_pct, section_all_pct FROM rolling_blackout WHERE municipality_geojson='" + data.municipality + "';";
+            var sql = "SELECT district, section_1_pct, section_2_pct, section_3_pct, section_4_pct, section_5_pct, section_6_pct, section_all_pct FROM rolling_blackout WHERE municipality='" + data.municipality + "';";
             
             $("#municipality-name").text(data.municipality);
             
