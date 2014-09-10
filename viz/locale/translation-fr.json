@@ -1,0 +1,39 @@
+{
+    "html": {
+        "title": "Plan de délestage de la Belgique"
+    },
+    "language": {
+        "en": "anglais",
+        "nl": "néerlandais",
+        "fr": "français"
+    },
+    "site": {
+        "title": "Est-ce que le plan de délestage affecte votre municipalité?"
+    },
+    "button": {
+        "section": {
+            "1": "Tranche 1",
+            "2": "Tranche 2",
+            "3": "Tranche 3",
+            "4": "Tranche 4",
+            "5": "Tranche 5",
+            "6": "Tranche 6",
+            "all": "Toutes les tranches"
+        }
+    },
+    "info-panel": {
+        "default": {
+            "title": "Sélectionnez votre municipalité sur la carte",
+            "subtitle": "... pour voir combien de cabines de distribution sont inclus dans le plan de délestage."
+        },
+        "table": {
+            "top-header": "Tranches",
+            "district": "Localité",
+            "all-sections": "Toutes"
+        }
+    },
+    "footer": {
+        "created-by": "Créé par",
+        "source-code": "Code source et données"
+    }
+}
