@@ -12,8 +12,8 @@ var main = function() {
     drawMap();
 
     // Select section with button
-    $(".select-section").click(function() {
-        $(".select-section").removeClass("active")
+    $("#section-selection button").click(function() {
+        $("#section-selection button").removeClass("active")
         $(this).addClass("active");
         window.selectedSection = this.value;
         changeSectionOnMap();
