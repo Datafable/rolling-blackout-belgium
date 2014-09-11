@@ -8,7 +8,7 @@
         "fr": "Français"
     },
     "site": {
-        "title": "Est-ce que le plan de délestage affecte votre municipalité?"
+        "title": "Est-ce que le plan de délestage affecte votre commune?"
     },
     "button": {
         "section": {
@@ -22,7 +22,7 @@
         }
     },
     "info-panel": {
-        "title": "Sélectionnez votre municipalité sur la carte",
+        "title": "Sélectionnez votre commune sur la carte",
         "subtitle": "... pour voir combien de cabines de distribution sont inclus dans le plan de délestage.",
         "sentence-1": "des",
         "sentence-2": "cabines de distribution",
