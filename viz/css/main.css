@@ -1,6 +1,15 @@
+#language-selection button {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+#intro .page-header {
+    margin-top: 0px;
+}
+
 #section-selection {
-    margin-top: 20px;
     margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 #map {
@@ -27,7 +36,7 @@
         display: none;
     }
 
-.footer {
+#footer {
     background-color: #f8f8f8;
     border-top: 1px solid #e7e7e7;
     margin-top: 20px;

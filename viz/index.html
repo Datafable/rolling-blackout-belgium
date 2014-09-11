@@ -13,49 +13,43 @@
     </head>
 
     <body>
-        <nav class="navbar navbar-default">
+        <div id="language-selection">
             <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="https://twitter.com/datafable">Datafable</a>
-                </div>
-
-                <div class="collapse navbar-collapse">
-                    <ul id="language-selection" class="nav navbar-nav navbar-right">
-                        <li id="nl"><a href="javascript:;" data-i18n="language.nl">Nederlands</a></li>
-                        <li id="fr"><a href="javascript:;" data-i18n="language.fr">français</a></li>
-                        <li id="en"><a href="javascript:;" data-i18n="language.en">English</a></li>
-                    </ul>
+                <div class="btn-group pull-right">
+                    <button id="nl" type="button" class="btn btn-default">NL</button>
+                    <button id="fr" type="button" class="btn btn-default">FR</button>
+                    <button id="en" type="button" class="btn btn-default">EN</button>
                 </div>
             </div>
-        </nav>
+        </div>
 
-        <div class="viz">
+        <div id="intro">
             <div class="container">
+                <div class="page-header">
+                    <h1 data-i18n="site.title">Does the rolling blackout plan affect your municipality?</h1>
+                </div>
+                <p class="lead" data-i18n="[html]site.introduction">Due to reduced power production, Belgium may encounter power shortages this winter. To mitigate a complete power failure, the Belgian Government has announced a <a href="http://economie.fgov.be/nl/consument/Energie/Energiebevoorradingszekerheid/Crisisbeleid/elektriciteit/afschakeling/afschakelplan/">rolling blackout plan</a>, in which parts of municipalities and districts are temporarily cut off from power at a known time. These cut offs are grouped in sections, which you can select below. If your municipality is not dark green, you may experience a couple of hours without electricity. To see details per district, just select your municipality on the map.</p>
+            </div>
+        </div>
 
-                <h1 data-i18n="site.title">Does the rolling blackout plan affect your municipality?</h1>
-                
+        <div id="viz">
+            <div class="container">
                 <div id="section-selection" class="btn-group">
                     <button type="button" class="btn btn-default" value="1" data-i18n="button.section.1">Section 1</button>
                     <button type="button" class="btn btn-default" value="2" data-i18n="button.section.2">Section 2</button>
                     <button type="button" class="btn btn-default" value="3" data-i18n="button.section.3">Section 3</button>
-                    <button type="button" class="btn btn-default" value="4" data-i18n="button.name.4">Section 4</button>
-                    <button type="button" class="btn btn-default" value="5" data-i18n="button.name.5">Section 5</button>
-                    <button type="button" class="btn btn-default" value="6" data-i18n="button.name.6">Section 6</button>
+                    <button type="button" class="btn btn-default" value="4" data-i18n="button.section.4">Section 4</button>
+                    <button type="button" class="btn btn-default" value="5" data-i18n="button.section.5">Section 5</button>
+                    <button type="button" class="btn btn-default" value="6" data-i18n="button.section.6">Section 6</button>
                     <button type="button" class="btn btn-default active" value="all" data-i18n="button.section.all">All sections</button>
                 </div>
                 
                 <div class="row">
                     <div class="col-lg-8">
-
                         <div id="map"></div>
-
                     </div>
-                    <div class="col-lg-4">
 
+                    <div class="col-lg-4">
                         <div id="info-panel">
                             <div class="default">
                                 <h2 data-i18n="info-panel.title">Select your municipality on the map</h2>
@@ -87,13 +81,12 @@
                                 </table>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
         
-        <div class="footer">
+        <div id="footer">
             <div class="container">
                 <p class="pull-left"><span data-i18n="footer.created-by">Created by</span> <a href="https://twitter.com/Datafable">Datafable</a></p>
                 <p class="pull-right"><a href="https://github.com/Datafable/rolling-blackout-belgium" data-i18n="footer.source-code">Source code and data</a></p>
@@ -102,7 +95,6 @@
 
         <!-- Scripts -->
         <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/i18next/1.6.3/i18next-1.6.3.min.js"></script>
         <script type="text/javascript" src="http://libs.cartocdn.com/cartodb.js/v3/cartodb.js"></script>
         <script type="text/javascript" src="js/app.js"></script>
