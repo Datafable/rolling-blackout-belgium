@@ -4,7 +4,7 @@
     },
     "site": {
         "title": "Est-ce que le plan de délestage affecte votre commune?",
-        "introduction": ""
+        "introduction": "En raison d'une production d'énergie réduite la Belgique pourrait rencontrer des pénuries d'électricité cet hiver. Pour éviter une panne d'électricité générale le gouvernement belge a annoncé un <a href=\"http://economie.fgov.be/fr/consommateurs/Energie/Securite_des_approvisionnements_en_energie/Politique_de_crise_coordination/electricite/delestage/plan-delestage/\">plan de délestage</a>, dans lequel des parties de territoire seraient temporairement privées d'électricité à un moment donné. Ces coupures sont groupées en tranches, que vous pouvez sélectionner ci-dessous. Si votre commune n'est pas en vert foncé, vous être susceptible d'être privé d'électricité pendant quelques heures. Pour voir le détail par localité il suffit de sélectionner votre commune sur la carte."
     },
     "button": {
         "section": {
