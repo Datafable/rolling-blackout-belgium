@@ -7,7 +7,7 @@ var main = function() {
         resGetPath: "locale/translation-__lng__.json"
     },
     function(t) {
-        translate();
+        translate(i18n.lng());
     });
 
     // Set default section
@@ -29,13 +29,15 @@ var main = function() {
         $("#language-selection li").removeClass("active")
         $(this).addClass("active");
         $.i18n.setLng(this.id,function(t){
-            translate();    
+            translate($(this).attr("id"));    
         });
     });
 };
 
-function translate() {
+function translate(currentLanguageID) {
     $("html").i18n(); // Set language for all elements with a data-i18n attribute
+    var currentLanguageID = "#" + currentLanguageID
+    $(currentLanguageID).addClass("active");
 }
 
 function drawMap() {
