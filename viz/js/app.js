@@ -2,10 +2,10 @@ var main = function() {
 
     // Load language
     $.i18n.init({
-        lng: 'en',
+        lng: "en",
         debug: true,
-        lngWhitelist: ['en', 'nl', 'fr'],
-        fallbackLng: 'en',
+        lngWhitelist: ["en", "nl", "fr"],
+        fallbackLng: "en",
         resGetPath: "locale/translation-__lng__.json"
     },
     function(t) {
@@ -41,14 +41,19 @@ function translate() {
 }
 
 function drawMap() {
-    cartodb.createVis("map", "http://datafable.cartodb.com/api/v2/viz/6ea981ca-38fa-11e4-b1f2-0e230854a1cb/viz.json")
+    var options = {
+        center: [50.52, 4.5],
+        zoom: 8,
+        loaderControl: false,
+        shareable: false
+    }
+    cartodb.createVis("map", "http://datafable.cartodb.com/api/v2/viz/6ea981ca-38fa-11e4-b1f2-0e230854a1cb/viz.json", options)
         .done(function(vis, layers) {
-            window.vis = vis;
             window.layers = layers;
             var sublayer = layers[1].getSubLayer(0);
-            sublayer.set({"interactivity": ["municipality", "section_all", "total", "section_all_pct"]});
             sublayer.setInteraction(true);
-            sublayer.on('featureClick' ,function(event, latlng, pos, data, layerindex)  {
+            sublayer.set({"interactivity": ["municipality", "section_all", "total", "section_all_pct"]});
+            sublayer.on("featureClick" ,function(event, latlng, pos, data, layerindex)  {
                 showMunicipalityInfo(data);
             });
         });
