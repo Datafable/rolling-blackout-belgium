@@ -3,7 +3,8 @@
         "title": "Afschakelplan in België"
     },
     "site": {
-        "title": "Zit jouw (deel)gemeente in het afschakelplan?"
+        "title": "Zit jouw (deel)gemeente in het afschakelplan?",
+        "introduction": "Door het nakende energietekort besliste de Belgische regering om een <a href=\"http://economie.fgov.be/nl/consument/Energie/Energiebevoorradingszekerheid/Crisisbeleid/elektriciteit/afschakeling/afschakelplan/\">afschakelplan</a> op te stellen waarbij delen van verschillende (deel)gemeenten tijdelijk zonder elektriciteit worden gezet. Het afschakelplan is in schijven verdeeld, welke je hieronder kan selecteren. Kleurt jouw gemeente in een schijf niet donkergroen, dan loop je het risico om deze winter enkele uren zonder elektriciteit te vallen. Wil je de gedetailleerde informatie per deelgemeente zien, klik dan op jouw gemeente op de kaart."
     },
     "button": {
         "section": {
@@ -17,7 +18,7 @@
         }
     },
     "info-panel": {
-        "title": "Selecteer je gemeente op de kaart",
+        "title": "Selecteer jouw gemeente op de kaart",
         "subtitle": "... om te zien hoeveel distributiecabines opgenomen zijn in het afschakelplan.",
         "sentence-1": "van de",
         "sentence-2": "distributiecabines",

@@ -3,7 +3,8 @@
         "title": "Plan de délestage de la Belgique"
     },
     "site": {
-        "title": "Est-ce que le plan de délestage affecte votre commune?"
+        "title": "Est-ce que le plan de délestage affecte votre commune?",
+        "introduction": ""
     },
     "button": {
         "section": {
