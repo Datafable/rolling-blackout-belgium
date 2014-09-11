@@ -91,7 +91,6 @@ function showMunicipalityInfo(data) {
 
     $("#municipality-name").text(data.municipality);
     $("#part").text(data.section_all);
-    console.log(data.section_all)
     $("#total").text(data.total);
     $("#percentage").text(data.section_all_pct);
 
