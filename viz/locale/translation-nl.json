@@ -22,10 +22,11 @@
         }
     },
     "info-panel": {
-        "default": {
-            "title": "Selecteer je gemeente op de kaart",
-            "subtitle": "... om te zien hoeveel distributiecabines opgenomen zijn in het afschakelplan."
-        },
+        "title": "Selecteer je gemeente op de kaart",
+        "subtitle": "... om te zien hoeveel distributiecabines opgenomen zijn in het afschakelplan.",
+        "sentence-1": "van de",
+        "sentence-2": "distributiecabines",
+        "sentence-3": "zijn opgenomen in het afschakelplan.",
         "table": {
             "top-header": "Schijven",
             "district": "Deelgemeente",
