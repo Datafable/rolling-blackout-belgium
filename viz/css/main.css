@@ -3,6 +3,10 @@
     border-top-right-radius: 0;
 }
 
+#intro .page-header {
+    margin-top: 0px;
+}
+
 #section-selection {
     margin-bottom: 20px;
     margin-top: 20px;
