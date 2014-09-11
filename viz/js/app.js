@@ -2,8 +2,6 @@ var main = function() {
 
     // Load language
     $.i18n.init({
-        lng: "en",
-        debug: true,
         lngWhitelist: ["en", "nl", "fr"],
         fallbackLng: "en",
         resGetPath: "locale/translation-__lng__.json"
