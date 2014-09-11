@@ -25,8 +25,8 @@ var main = function() {
     });
 
     // Select language
-    $("#language-selection li").click(function() {
-        $("#language-selection li").removeClass("active")
+    $("#language-selection button").click(function() {
+        $("#language-selection button").removeClass("active")
         $(this).addClass("active");
         $.i18n.setLng(this.id,function(t){
             translate($(this).attr("id"));    

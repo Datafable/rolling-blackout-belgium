@@ -2,13 +2,9 @@
     "html": {
         "title": "Rolling blackout plan in Belgium"
     },
-    "language": {
-        "en": "English",
-        "nl": "Nederlands",
-        "fr": "français"
-    },
     "site": {
-        "title": "Does the rolling blackout plan affect your municipality?"
+        "title": "Does the rolling blackout plan affect your municipality?",
+        "introduction": "Due to reduced power production, Belgium may encounter power shortages this winter. To mitigate a complete power failure, the Belgian Government has announced a <a href=\"http://economie.fgov.be/nl/consument/Energie/Energiebevoorradingszekerheid/Crisisbeleid/elektriciteit/afschakeling/afschakelplan/\">rolling blackout plan</a>, in which parts of municipalities and districts are temporarily cut off from power at a known time. These cut offs are grouped in sections, which you can select below. If your municipality is not dark green, you may experience a couple of hours without electricity. To see details per district, just select your municipality on the map."
     },
     "button": {
         "section": {
