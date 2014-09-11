@@ -1,17 +1,44 @@
 var main = function() {
+
+    // Load language
+    $.i18n.init({
+        lng: 'en',
+        debug: true,
+        lngWhitelist: ['en', 'nl', 'fr'],
+        fallbackLng: 'en',
+        resGetPath: "locale/translation-__lng__.json"
+    },
+    function(t) {
+        translate();
+    });
+
+    // Set default section
     window.selectedSection = "all";
 
     // Draw map
     drawMap();
 
     // Select section with button
-    $(".select-section").click(function() {
-        $(".select-section").removeClass("active")
+    $("#section-selection button").click(function() {
+        $("#section-selection button").removeClass("active")
         $(this).addClass("active");
-        selectedSection = this.value;
+        window.selectedSection = this.value;
         changeSectionOnMap();
     });
+
+    // Select language
+    $("#language-selection li").click(function() {
+        $("#language-selection li").removeClass("active")
+        $(this).addClass("active");
+        $.i18n.setLng(this.id,function(t){
+            translate();    
+        });
+    });
 };
+
+function translate() {
+    $("html").i18n(); // Set language for all elements with a data-i18n attribute
+}
 
 function drawMap() {
     cartodb.createVis("map", "http://datafable.cartodb.com/api/v2/viz/6ea981ca-38fa-11e4-b1f2-0e230854a1cb/viz.json")
@@ -24,13 +51,12 @@ function drawMap() {
             sublayer.on('featureClick' ,function(event, latlng, pos, data, layerindex)  {
                 showMunicipalityInfo(data);
             });
-        });;
+        });
 };
 
-// show the detailed info of a municipality in the sidebar
 function showMunicipalityInfo(data) {
     var sectionField = "section_" + selectedSection + "_pct";
-    var sql = "SELECT district, section_1_pct, section_2_pct, section_3_pct, section_4_pct, section_5_pct, section_6_pct, section_all_pct FROM rolling_blackout WHERE municipality_geojson='" + data.municipality + "';";
+    var sql = "SELECT district, section_1_pct, section_2_pct, section_3_pct, section_4_pct, section_5_pct, section_6_pct, section_all_pct FROM rolling_blackout WHERE municipality='" + data.municipality + "';";
     $("#municipality-name").text(data.municipality);
     var municipalityData = data.section_all + ' of the ' + data.total + ' power distribution cabinets (' + data.section_all_pct + '%) are included in the rolling blackout plan.';
     $("#municipality-data").text(municipalityData);
@@ -59,7 +85,6 @@ function showMunicipalityInfo(data) {
                     } else {
                         value = value + "%";
                     }
-                    var openTag = "<th class=\"section-all\">";
                     var openTag = "<td class=\"section-" + index + "\">";
                     var closeTag = "</td>";
                 }
