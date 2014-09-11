@@ -1,6 +1,11 @@
+#language-selection button {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
 #section-selection {
-    margin-top: 20px;
     margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 #map {
