@@ -10,9 +10,9 @@ Create an **complete**, **interactive**, **open source** visualization of the ro
 
 ## Result
 
-<http://datafable.github.io/rolling-blackout-belgium/viz/>
+<http://datafable.com/rolling-blackout-belgium/viz/>
 
-[![screenshot](screenshot.png)](http://datafable.github.io/rolling-blackout-belgium/viz/)
+[![screenshot](screenshot.png)](http://datafable.com/rolling-blackout-belgium/viz/)
 
 ## Data
 
