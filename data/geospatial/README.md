@@ -2,68 +2,79 @@
 
 This document describes the procedure we followed to create a geojson with border polygons for all [589 Belgian municipalities](http://en.wikipedia.org/wiki/Municipalities_of_Belgium).
 
-1. Find open data on municipalities ("gemeentes") and districts ("deelgemeentes") polygons. This was needlessly hard ([do a better job, government!](https://index.okfn.org/country/overview/Belgium/)). District data could not be found, but thanks some [great help](https://github.com/Datafable/rolling-blackout-belgium/issues/1) via Twitter by the [Belgian Open Knowledge Foundation](http://okfn.be/), we found 2 useful files for the municipalities:
-    * [Voorlopig referentiebestand gemeentegrenzen](http://www.geopunt.be/download?container=referentiebestand-gemeenten&title=Voorlopig%20referentiebestand%20gemeentegrenzen): shapefile by [AGIV](https://www.agiv.be/) with municipalities in **Flanders**, released under an [Gratis Open Data Licentie](http://www4wvg.vlaanderen.be/wvg/data/Documents/Gratis_Open_Data_Licentie.pdf).
-    * [communes wallonie-bruxelles.kml](https://www.google.com/fusiontables/data?docid=1Kg6KwV_QzMBSd3ZKl6id6Bsosewwex-Ubrd75Sg#map:id=3): kml with municipalities of **Wallonia and Brussels**, released under an unknown license, but download allowed.
+1. Find open data on municipality and district polygons. This was needlessly hard ([do a better job, government!](https://index.okfn.org/country/overview/Belgium/)). **District data could not be found**, but thanks to some [great help](https://github.com/Datafable/rolling-blackout-belgium/issues/1) via Twitter by the [Belgian Open Knowledge Foundation](http://okfn.be/), we got an open geojson file with all municipalities:
 
-2. Use `Refgem.shp` of Flemish data and change datum to `WGS84` with [QGIS](http://www.qgis.org/).
-3. Rename files:
-    * `municipalities_fla`: data for Flanders.
-    * `municipalities_wal_bru`: data for Wallonia/Brussels.
-4. Upload both files to [CartoDB](http://cartodb.com).
-5. Join tables and only keep limited columns, including one for the region:
+    * [Communes-Gemeenten.geojson](https://github.com/pduchesne/data/blob/master/geo/Communes-Gemeenten.geojson) by [Philippe Duschesne](https://twitter.com/pduschesne).
 
-   ```SQL
-   SELECT
-        the_geom,
-        the_geom_webmercator,
-        naam AS name,
-        'Flanders' AS region
-    FROM municipalities_fla
+2. Upload the file to [CartoDB](http://cartodb.com) as `municipalities_belgium`.
+3. Add a column for province and region, and populate based on the `shn` code:
 
-    UNION
+    ```SQL
+    ALTER TABLE municipalities_belgium
+    ADD COLUMN region text,
+    ADD COLUMN province text;
 
-    SELECT
-        the_geom,
-        the_geom_webmercator,
-        nom AS name,
-        CASE 
-            WHEN nom='Anderlecht' THEN 'Brussels'
-            WHEN nom='Auderghem' THEN 'Brussels'
-            WHEN nom='Berchem-Sainte-Agathe' THEN 'Brussels'
-            WHEN nom='Bruxelles' THEN 'Brussels'
-            WHEN nom='Etterbeek' THEN 'Brussels'
-            WHEN nom='Evere' THEN 'Brussels'
-            WHEN nom='Forest' THEN 'Brussels'
-            WHEN nom='Ganshoren' THEN 'Brussels'
-            WHEN nom='Ixelles' THEN 'Brussels'
-            WHEN nom='Jette' THEN 'Brussels'
-            WHEN nom='Koekelberg' THEN 'Brussels'
-            WHEN nom='Molenbeek-Saint-Jean' THEN 'Brussels'
-            WHEN nom='Saint-Gilles' THEN 'Brussels'
-            WHEN nom='Saint-Josse-ten-Noode' THEN 'Brussels'
-            WHEN nom='Schaerbeek' THEN 'Brussels'
-            WHEN nom='Uccle' THEN 'Brussels'
-            WHEN nom='Watermael-Boitsfort' THEN 'Brussels'
-            WHEN nom='Woluwe-Saint-Lambert' THEN 'Brussels'
-            WHEN nom='Woluwe-Saint-Pierre' THEN 'Brussels'
-            ELSE 'Wallonia'
-        END AS region
-    FROM municipalities_wal_bru
+    UPDATE municipalities_belgium
+    SET province = 
+        CASE
+            WHEN substring(shn,3,2) = '21' THEN 'BE-VAN'
+            WHEN substring(shn,3,2) = '22' THEN 'BE-VBR'
+            WHEN substring(shn,3,2) = '23' THEN 'BE-VWV'
+            WHEN substring(shn,3,2) = '24' THEN 'BE-VOV'
+            WHEN substring(shn,3,2) = '27' THEN 'BE-VLI'
+            WHEN substring(shn,3,2) = '32' THEN 'BE-WBR'
+            WHEN substring(shn,3,2) = '35' THEN 'BE-WHT'
+            WHEN substring(shn,3,2) = '36' THEN 'BE-WLG'
+            WHEN substring(shn,3,2) = '38' THEN 'BE-WLX'
+            WHEN substring(shn,3,2) = '39' THEN 'BE-WNA'
+            WHEN substring(shn,3,2) = '42' THEN NULL
+        END,
+        region =
+        CASE
+            WHEN substring(shn,3,2) = '21' THEN 'BE-VLG'
+            WHEN substring(shn,3,2) = '22' THEN 'BE-VLG'
+            WHEN substring(shn,3,2) = '23' THEN 'BE-VLG'
+            WHEN substring(shn,3,2) = '24' THEN 'BE-VLG'
+            WHEN substring(shn,3,2) = '27' THEN 'BE-VLG'
+            WHEN substring(shn,3,2) = '32' THEN 'BE-WAL'
+            WHEN substring(shn,3,2) = '35' THEN 'BE-WAL'
+            WHEN substring(shn,3,2) = '36' THEN 'BE-WAL'
+            WHEN substring(shn,3,2) = '38' THEN 'BE-WAL'
+            WHEN substring(shn,3,2) = '39' THEN 'BE-WAL'
+            WHEN substring(shn,3,2) = '42' THEN 'BE-BRU'
+        END
     ```
 
-6. Save result as new table `municipalities_belgium`.
-7. Create a view for geojson export:
+4. Remove unnecessary columns
+
+   ```SQL
+   ALTER TABLE municipalities_belgium
+   DROP COLUMN description,
+   DROP COLUMN desn,
+   DROP COLUMN icc,
+   DROP COLUMN isn,
+   DROP COLUMN name,
+   DROP COLUMN shape_area,
+   DROP COLUMN shape_leng;
+
+   ALTER TABLE municipalities_belgium
+   RENAME COLUMN namn TO name
+   ```
+
+5. Create a view for geojson export:
 
     ```SQL
     SELECT
         name,
+        province,
         region,
+        shn,
         the_geom
-    FROM municipalities_belgium
+    FROM municipalities_belgium_2
     ORDER BY
         region,
+        province,
         name
    ```
 
-8. Export as geojson and upload to GitHub as [municipalities-belgium.geojson](municipalities-belgium.geojson).
+6. Export as geojson and upload to GitHub as [municipalities-belgium.geojson](municipalities-belgium.geojson).
