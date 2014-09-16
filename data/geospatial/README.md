@@ -3,7 +3,6 @@
 This document describes the procedure we followed to create a geojson with border polygons for all [589 Belgian municipalities](http://en.wikipedia.org/wiki/Municipalities_of_Belgium).
 
 1. Find open data on municipality and district polygons. This was needlessly hard ([do a better job, government!](https://index.okfn.org/country/overview/Belgium/)). **District data could not be found**, but thanks to some [great help](https://github.com/Datafable/rolling-blackout-belgium/issues/1) via Twitter by the [Belgian Open Knowledge Foundation](http://okfn.be/), we got an open geojson file with all municipalities:
-
     * [Communes-Gemeenten.geojson](https://github.com/pduchesne/data/blob/master/geo/Communes-Gemeenten.geojson) by [Philippe Duschesne](https://twitter.com/pduschesne).
 
 2. Upload the file to [CartoDB](http://cartodb.com) as `municipalities_belgium`.
