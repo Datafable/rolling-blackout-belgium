@@ -70,7 +70,7 @@ This document describes the procedure we followed to create a geojson with borde
         region,
         shn,
         the_geom
-    FROM municipalities_belgium_2
+    FROM municipalities_belgium
     ORDER BY
         region,
         province,
