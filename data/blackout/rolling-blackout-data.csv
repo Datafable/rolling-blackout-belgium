@@ -278,30 +278,30 @@ Wavre,Wavre,Wavre,206,,,,,,1,207
 Anderlecht,Anderlecht,Anderlecht,,,,,,,309,309
 Anderlecht,Anderlecht,Kanaal-Spoor Oost / Canal-Voie Est,,,,,,,223,223
 Anderlecht,Anderlecht,Ring West / Ring Ouest,,,,,,,77,77
-Brussel / Bruxelles,Bruxelles,Pentagoon / Pentagone,,,,,,,736,736
-Brussel / Bruxelles,Bruxelles,Antwerpse Steenweg / Chausséed'Anvers,,,,,,,134,134
-Brussel / Bruxelles,Bruxelles,Louisa / Louise,,,,,,,167,167
-Brussel / Bruxelles,Bruxelles,Wetstraat / Rue de la Loi,,,,,,,365,365
-Brussel / Bruxelles,Bruxelles,Haren,,,,,,,107,107
-Brussel / Bruxelles,Bruxelles,Laken,,,,,,,193,193
-Brussel / Bruxelles,Bruxelles,Neder-over-Heembeek,,,,,,,119,119
-Elsene /Ixelles,Ixelles,Elsene / Ixelles,,,,,,,389,389
+Brussel / Bruxelles,Brussel#Bruxelles,Pentagoon / Pentagone,,,,,,,736,736
+Brussel / Bruxelles,Brussel#Bruxelles,Antwerpse Steenweg / Chausséed'Anvers,,,,,,,134,134
+Brussel / Bruxelles,Brussel#Bruxelles,Louisa / Louise,,,,,,,167,167
+Brussel / Bruxelles,Brussel#Bruxelles,Wetstraat / Rue de la Loi,,,,,,,365,365
+Brussel / Bruxelles,Brussel#Bruxelles,Haren,,,,,,,107,107
+Brussel / Bruxelles,Brussel#Bruxelles,Laken,,,,,,,193,193
+Brussel / Bruxelles,Brussel#Bruxelles,Neder-over-Heembeek,,,,,,,119,119
+Elsene /Ixelles,Elsene#Ixelles,Elsene / Ixelles,,,,,,,389,389
 Etterbeek,Etterbeek,Etterbeek,,,,,,,207,207
 Evere,Evere,Evere,,,,,,,219,219
 Ganshoren,Ganshoren,Ganshoren,,,,,,,82,82
 Jette,Jette,Jette,,,,,,,149,149
 Koekelberg,Koekelberg,Koekelberg,,,,,,,80,80
-Oudergem / Auderghem,Auderghem,Oudergem / Auderghem,,,,,1,,199,200
-Schaarbeek / Schaerbeek,Schaerbeek,Schaarbeek / Schaerbeek,,,,,,,348,348
-Sint-Agatha-Berchem / Berchem-Sainte-Agathe,Berchem-Sainte-Agathe,Sint-Agatha-Berchem / Berchem-Sainte-Agathe,,,,,,,120,120
-Sint-Gillis / Saint-Gilles,Saint-Gilles,Sint-Gillis / Saint-Gilles,,,,,,,187,187
-Sint-Jans-Molenbeek / Molenbeek-Saint-Jean,Molenbeek-Saint-Jean,Sint-Jans-Molenbeek / Molenbeek-Saint-Jean,,,,,,,331,331
-Sint-Joost-ten-Node / Saint-Josse-Ten-Noode,Saint-Josse-ten-Noode,Sint-Joost-ten-Node / Saint-Josse-Ten-Noode,,,,,,,126,126
-Sint-Lambrechts-Woluwe / Woluwé-Saint-Lambert,Woluwe-Saint-Lambert,Sint-Lambrechts-Woluwe / Woluwé-Saint-Lambert,,,,,,,302,302
-Sint-Pieters-Woluwe / Woluwé-Saint-Pierre,Woluwe-Saint-Pierre,Sint-Pieters-Woluwe / Woluwé-Saint-Pierre,,,,,,,229,229
-Ukkel / Uccle,Uccle,Ukkel / Uccle,,,,,55,,445,500
-Vorst / Forest,Forest,Vorst / Forest,,,,,,,263,263
-Watermaal-Bosvoorde / Watermael-Boitsfort,Watermael-Boitsfort,Watermaal-Bosvoorde / Watermael-Boitsfort,,,,,,,125,125
+Oudergem / Auderghem,Oudergem#Auderghem,Oudergem / Auderghem,,,,,1,,199,200
+Schaarbeek / Schaerbeek,Schaarbeek#Schaerbeek,Schaarbeek / Schaerbeek,,,,,,,348,348
+Sint-Agatha-Berchem / Berchem-Sainte-Agathe,Sint-Agatha-Berchem#Berchem-Sainte-Agathe,Sint-Agatha-Berchem / Berchem-Sainte-Agathe,,,,,,,120,120
+Sint-Gillis / Saint-Gilles,Sint-Gillis#Saint-Gilles,Sint-Gillis / Saint-Gilles,,,,,,,187,187
+Sint-Jans-Molenbeek / Molenbeek-Saint-Jean,Sint-Jan-Molenbeek#Molenbeek-Saint-Jean,Sint-Jans-Molenbeek / Molenbeek-Saint-Jean,,,,,,,331,331
+Sint-Joost-ten-Node / Saint-Josse-Ten-Noode,Sint-Joost-ten-Node#Saint-Josse-ten-Noode,Sint-Joost-ten-Node / Saint-Josse-Ten-Noode,,,,,,,126,126
+Sint-Lambrechts-Woluwe / Woluwé-Saint-Lambert,Sint-Lambrechts-Woluwe#Woluwe-Saint-Lambert,Sint-Lambrechts-Woluwe / Woluwé-Saint-Lambert,,,,,,,302,302
+Sint-Pieters-Woluwe / Woluwé-Saint-Pierre,Sint-Pieters-Woluwe#Woluwe-Saint-Pierre,Sint-Pieters-Woluwe / Woluwé-Saint-Pierre,,,,,,,229,229
+Ukkel / Uccle,Ukkel#Uccle,Ukkel / Uccle,,,,,55,,445,500
+Vorst / Forest,Vorst#Forest,Vorst / Forest,,,,,,,263,263
+Watermaal-Bosvoorde / Watermael-Boitsfort,Watermaal-Bosvoorde#Watermael-Boitsfort,Watermaal-Bosvoorde / Watermael-Boitsfort,,,,,,,125,125
 Aiseau-Presles,Aiseau-Presles,Aiseau,,,,20,,,1,21
 Aiseau-Presles,Aiseau-Presles,Pont-de-Loup,,,,19,,,,19
 Aiseau-Presles,Aiseau-Presles,Presles,,,,14,,,,14
@@ -340,15 +340,15 @@ Beaumont,Beaumont,Renlies,,,11,,,,,11
 Beaumont,Beaumont,Solre-Saint-Géry,,,19,,,,,19
 Beaumont,Beaumont,Strée,,,25,,,,,25
 Beaumont,Beaumont,Thirimont,,1,14,,,,,15
-Beloeil,Belœil,Aubechies,,,,,1,,,1
-Beloeil,Belœil,Basècles,,,,,20,,,20
-Beloeil,Belœil,Beloeil,,,,,16,,,16
-Beloeil,Belœil,Ellignies-Sainte-Anne,,,,,12,,,12
-Beloeil,Belœil,Quevaucamps,,,,,18,,,18
-Beloeil,Belœil,Ramegnies,,,,,1,,,1
-Beloeil,Belœil,Stambruges,,,,,14,,,14
-Beloeil,Belœil,Thumaide,,,,,5,,,5
-Beloeil,Belœil,Wadelincourt,,,,,3,,,3
+Beloeil,Beloeil,Aubechies,,,,,1,,,1
+Beloeil,Beloeil,Basècles,,,,,20,,,20
+Beloeil,Beloeil,Beloeil,,,,,16,,,16
+Beloeil,Beloeil,Ellignies-Sainte-Anne,,,,,12,,,12
+Beloeil,Beloeil,Quevaucamps,,,,,18,,,18
+Beloeil,Beloeil,Ramegnies,,,,,1,,,1
+Beloeil,Beloeil,Stambruges,,,,,14,,,14
+Beloeil,Beloeil,Thumaide,,,,,5,,,5
+Beloeil,Beloeil,Wadelincourt,,,,,3,,,3
 Bernissart,Bernissart,Bernissart,,,,,23,,,23
 Bernissart,Bernissart,Blaton,,,,,34,,,34
 Bernissart,Bernissart,Pommeroeul,,,,,20,,,20
@@ -432,11 +432,11 @@ Chimay,Chimay,Virelles,,,,,,,,0
 Colfontaine,Colfontaine,Pâturages,,,,,26,,,26
 Colfontaine,Colfontaine,Warquignies,,,,,3,,,3
 Colfontaine,Colfontaine,Wasmes,,,,,47,,3,50
-Comines-Warneton,Comines-Warneton,Bas-Warneton,,,,,,,15,15
-Comines-Warneton,Comines-Warneton,Comines,,,,,,,93,93
-Comines-Warneton,Comines-Warneton,Houthem,,,,,,,9,9
-Comines-Warneton,Comines-Warneton,Ploegsteert,,,,,,,51,51
-Comines-Warneton,Comines-Warneton,Warneton,,,,,,,40,40
+Comines-Warneton,Comines-Warneton#Komen-Waasten,Bas-Warneton,,,,,,,15,15
+Comines-Warneton,Comines-Warneton#Komen-Waasten,Comines,,,,,,,93,93
+Comines-Warneton,Comines-Warneton#Komen-Waasten,Houthem,,,,,,,9,9
+Comines-Warneton,Comines-Warneton#Komen-Waasten,Ploegsteert,,,,,,,51,51
+Comines-Warneton,Comines-Warneton#Komen-Waasten,Warneton,,,,,,,40,40
 Courcelles,Courcelles,Courcelles,,,,57,,21,,78
 Courcelles,Courcelles,Gouy-lez-Piéton,,,2,38,,,,40
 Courcelles,Courcelles,Souvret,,,,18,,1,,19
@@ -451,9 +451,9 @@ Ecaussinnes,Écaussinnes,Marche-lez-Ecaussinnes,,,16,,,,3,19
 Ellezelles,Ellezelles,Ellezelles,,,,,,,54,54
 Ellezelles,Ellezelles,Lahamaide,9,,,,,,,9
 Ellezelles,Ellezelles,Wodecq,3,,12,,,,,15
-Enghien,Enghien,Enghien,,,18,,,,,18
-Enghien,Enghien,Marcq,,,32,,,,,32
-Enghien,Enghien,Petit-Enghien,,,56,,,,,56
+Enghien,Enghien#Edingen,Enghien,,,18,,,,,18
+Enghien,Enghien#Edingen,Marcq,,,32,,,,,32
+Enghien,Enghien#Edingen,Petit-Enghien,,,56,,,,,56
 Erquelinnes,Erquelinnes,Bersillies-l'Abbaye,,7,,,,,,7
 Erquelinnes,Erquelinnes,Erquelinnes,,22,,,,,,22
 Erquelinnes,Erquelinnes,Grand-Reng,,15,,,,,,15
@@ -486,7 +486,7 @@ Fleurus,Fleurus,Saint-Amand,,,,16,,,,16
 Fleurus,Fleurus,Wagnelée,,,,7,,,,7
 Fleurus,Fleurus,Wanfercée-Baulet,,,,,,,30,30
 Fleurus,Fleurus,Wangenies,,,,,,,9,9
-Flobecq,Flobecq,Flobecq,,,40,,,,,40
+Flobecq,Flobecq#Vloesberg,Flobecq,,,40,,,,,40
 Fontaine-l'Evêque,Fontaine-l'Évêque,Fontaine-l'Evêque,,,,,,52,2,54
 Fontaine-l'Evêque,Fontaine-l'Évêque,Forchies-la-Marche,,,,1,,32,,33
 Fontaine-l'Evêque,Fontaine-l'Évêque,Leernes,,,,,,29,3,32
@@ -633,10 +633,10 @@ Montigny-le-Tilleul,Montigny-le-Tilleul,Montigny-le-Tilleul,,,,,,2,66,68
 Morlanwelz,Morlanwelz,Carnières,,41,,,,,1,42
 Morlanwelz,Morlanwelz,Mont-Sainte-Aldegonde,,,,,,,10,10
 Morlanwelz,Morlanwelz,Morlanwelz-Mariemont,,55,,,,,2,57
-Mouscron,Mouscron,Dottignies,150,,,,,,30,180
-Mouscron,Mouscron,Herseaux,21,,,,,,45,66
-Mouscron,Mouscron,Luingne,,,,,,,56,56
-Mouscron,Mouscron,Mouscron,,,,,,,300,300
+Mouscron,Mouscron#Moeskroen,Dottignies,150,,,,,,30,180
+Mouscron,Mouscron#Moeskroen,Herseaux,21,,,,,,45,66
+Mouscron,Mouscron#Moeskroen,Luingne,,,,,,,56,56
+Mouscron,Mouscron#Moeskroen,Mouscron,,,,,,,300,300
 Pecq,Pecq,Esquelmes,4,,,,,,,4
 Pecq,Pecq,Hérinnes,2,,,,,,10,12
 Pecq,Pecq,Obigies,,,,,,,5,5
@@ -741,9 +741,9 @@ Amay,Amay,Ampsin,,,,22,1,,,23
 Amay,Amay,Flône,,,,3,,,,3
 Amay,Amay,Jehay-Bodegnee,,,,13,,,,13
 Amay,Amay,Ombret-Rawsa,,,,2,,,6,8
-Amel,Amblève (Amel),Amel,,82,,,,,,82
-Amel,Amblève (Amel),Heppenbach,,36,,,,,,36
-Amel,Amblève (Amel),Meyerode,,16,,,,,,16
+Amel,Amel#Amblève,Amel,,82,,,,,,82
+Amel,Amel#Amblève,Heppenbach,,36,,,,,,36
+Amel,Amel#Amblève,Meyerode,,16,,,,,,16
 Ans,Ans,Alleur,,,,,90,,,90
 Ans,Ans,Ans,,,,,69,32,,101
 Ans,Ans,Loncin,,,,,25,7,,32
@@ -790,9 +790,9 @@ Braives,Braives,Fumal,,,,,8,,,8
 Braives,Braives,Latinne,,,,,6,,,6
 Braives,Braives,Tourinne,,,,,2,,,2
 Braives,Braives,Ville-en-Hesbaye,,,,,7,,,7
-Büllingen,Bullange (Büllingen),Büllingen,,10,,,,,52,62
-Büllingen,Bullange (Büllingen),Manderfeld,,29,,,,,6,35
-Büllingen,Bullange (Büllingen),Rocherath,,,,,,,26,26
+Büllingen,Büllingen#Bullange,Büllingen,,10,,,,,52,62
+Büllingen,Büllingen#Bullange,Manderfeld,,29,,,,,6,35
+Büllingen,Büllingen#Bullange,Rocherath,,,,,,,26,26
 Burdinne,Burdinne,Burdinne,,,,6,,,,6
 Burdinne,Burdinne,Hanneche,,,,4,,,,4
 Burdinne,Burdinne,Lamontzée,,,,1,,,,1
@@ -800,8 +800,8 @@ Burdinne,Burdinne,Marneffe,,,,9,1,,,10
 Burdinne,Burdinne,Oteppe,,,,10,,,,10
 Burg-Reuland,Burg-Reuland,Burg-Reuland,,51,,,,,,51
 Burg-Reuland,Burg-Reuland,Thommen,,47,,,,,,47
-Bütgenbach,Butgenbach (Bütgenbach),Bütgenbach,,,,,,,66,66
-Bütgenbach,Butgenbach (Bütgenbach),Elsenborn,,,,,,,30,30
+Bütgenbach,Bütgenbach#Butgenbach,Bütgenbach,,,,,,,66,66
+Bütgenbach,Bütgenbach#Butgenbach,Elsenborn,,,,,,,30,30
 Chaudfontaine,Chaudfontaine,Beaufays,,,,,,28,7,35
 Chaudfontaine,Chaudfontaine,Chaudfontaine,,,,,,26,,26
 Chaudfontaine,Chaudfontaine,Embourg,,,,,,52,2,54
@@ -917,9 +917,9 @@ Juprelle,Juprelle,Slins,,,,,5,,,5
 Juprelle,Juprelle,Villers-Saint-Siméon,,,,,3,,,3
 Juprelle,Juprelle,Voroux-lez-Liers,,,,,7,,,7
 Juprelle,Juprelle,Wihogne,,,,,7,,,7
-Kelmis,La Calamine (Kelmis),Hergenrath,,26,,,,,4,30
-Kelmis,La Calamine (Kelmis),Kelmis,,33,,,,,,33
-Kelmis,La Calamine (Kelmis),Neu-Moresnet,,24,,,,,,24
+Kelmis,Kelmis#La Calamine,Hergenrath,,26,,,,,4,30
+Kelmis,Kelmis#La Calamine,Kelmis,,33,,,,,,33
+Kelmis,Kelmis#La Calamine,Neu-Moresnet,,24,,,,,,24
 Liège,Liège,Angleur,,,,,,61,67,128
 Liège,Liège,Bressoux,,,,,,2,40,42
 Liège,Liège,Chênée,,,,,,59,,59
@@ -992,11 +992,11 @@ Saint-Georges-sur-Meuse,Saint-Georges-sur-Meuse,Saint-Georges-sur-Meuse,,,,27,38
 Saint-Nicolas,Saint-Nicolas,Montegnée,,,,,16,14,,30
 Saint-Nicolas,Saint-Nicolas,Saint-Nicolas,,,,,,19,2,21
 Saint-Nicolas,Saint-Nicolas,Tilleur,,,,,,12,,12
-Sankt Vith,Saint-Vith (Sankt Vith),Crombach,,57,,,,,,57
-Sankt Vith,Saint-Vith (Sankt Vith),Lommersweiler,,33,,,,,,33
-Sankt Vith,Saint-Vith (Sankt Vith),Recht,,39,,,,,,39
-Sankt Vith,Saint-Vith (Sankt Vith),Sankt Vith,,70,,,,,,70
-Sankt Vith,Saint-Vith (Sankt Vith),Schönberg,,15,,,,,,15
+Sankt Vith,Sankt Vith#Saint-Vith,Crombach,,57,,,,,,57
+Sankt Vith,Sankt Vith#Saint-Vith,Lommersweiler,,33,,,,,,33
+Sankt Vith,Sankt Vith#Saint-Vith,Recht,,39,,,,,,39
+Sankt Vith,Sankt Vith#Saint-Vith,Sankt Vith,,70,,,,,,70
+Sankt Vith,Sankt Vith#Saint-Vith,Schönberg,,15,,,,,,15
 Seraing,Seraing,Boncelles,,,,,,,34,34
 Seraing,Seraing,Jemeppe,,,,,47,25,,72
 Seraing,Seraing,Ougree,,,,,1,10,47,58
@@ -1058,9 +1058,9 @@ Visé,Visé,Lanaye,,5,,,,,,5
 Visé,Visé,Lixhe,,11,,,,,,11
 Visé,Visé,Richelle,,8,,,,,,8
 Visé,Visé,Visé,,61,,,,,,61
-Waimes,Waimes (Weismes),Faymonville,,9,,,,,,9
-Waimes,Waimes (Weismes),Robertville,,,,,,,54,54
-Waimes,Waimes (Weismes),Waimes,,35,,,,,55,90
+Waimes,Waimes#Weismes,Faymonville,,9,,,,,,9
+Waimes,Waimes#Weismes,Robertville,,,,,,,54,54
+Waimes,Waimes#Weismes,Waimes,,35,,,,,55,90
 Wanze,Wanze,Antheit,,,,,23,,,23
 Wanze,Wanze,Bas-Oha,,,,8,6,,,14
 Wanze,Wanze,Huccorgne,,,,16,,,,16
@@ -1270,12 +1270,12 @@ Tongeren,Tongeren,Sluizen,,,,,,,2,2
 Tongeren,Tongeren,Tongeren,,,,,,,124,124
 Tongeren,Tongeren,Vreren,,,,,,,10,10
 Tongeren,Tongeren,Widooie,,,,,,,3,3
-Voeren,Voeren,Moelingen,,11,,,,,,11
-Voeren,Voeren,Remersdaal,,17,,,,,,17
-Voeren,Voeren,'s Gravenvoeren,,25,,,,,,25
-Voeren,Voeren,Sint-Martens-Voeren,,23,,,,,,23
-Voeren,Voeren,Sint-Pieters-Voeren,,4,,,,,,4
-Voeren,Voeren,Teuven,,16,,,,,,16
+Voeren,Voeren#Fourons,Moelingen,,11,,,,,,11
+Voeren,Voeren#Fourons,Remersdaal,,17,,,,,,17
+Voeren,Voeren#Fourons,'s Gravenvoeren,,25,,,,,,25
+Voeren,Voeren#Fourons,Sint-Martens-Voeren,,23,,,,,,23
+Voeren,Voeren#Fourons,Sint-Pieters-Voeren,,4,,,,,,4
+Voeren,Voeren#Fourons,Teuven,,16,,,,,,16
 Wellen,Wellen,Berlingen,,,,,,,4,4
 Wellen,Wellen,Herten,,,,,,,6,6
 Wellen,Wellen,Ulbeek,,,,,,,7,7
@@ -2067,7 +2067,7 @@ Oudenaarde,Oudenaarde,Melden,,,28,,,,3,31
 Oudenaarde,Oudenaarde,Mullem,,,8,,,,,8
 Oudenaarde,Oudenaarde,Oudenaarde,,,318,,,,,318
 Oudenaarde,Oudenaarde,Welden,,,9,,,,3,12
-Ronse,Ronse,Ronse,,,1,,,,256,257
+Ronse,Ronse#Renaix,Ronse,,,1,,,,256,257
 Sint-Gillis-Waas,Sint-Gillis-Waas,De Klinge,,17,,,,,1,18
 Sint-Gillis-Waas,Sint-Gillis-Waas,Meerdonk,,,,,,,14,14
 Sint-Gillis-Waas,Sint-Gillis-Waas,Peisels en Verre,,5,,,,,,5
@@ -2168,7 +2168,7 @@ Bekkevoort,Bekkevoort,Molenbeek-Wersbeek,,,,,15,,,15
 Bertem,Bertem,Bertem,30,,,,,,,30
 Bertem,Bertem,Korbeek-Dijle,6,,,,,,,6
 Bertem,Bertem,Leefdaal,20,,,6,,,,26
-Bever,Bever,Bever,,,,20,,,,20
+Bever,Bever#Biévène,Bever,,,,20,,,,20
 Bierbeek,Bierbeek,Bierbeek,,,,,,,37,37
 Bierbeek,Bierbeek,Korbeek-Lo,,,,,,,39,39
 Bierbeek,Bierbeek,Lovenjoel,,,,,,,25,25
@@ -2321,7 +2321,7 @@ Scherpenheuvel-Zichem,Scherpenheuvel-Zichem,Messelbroek,,,,,,16,,16
 Scherpenheuvel-Zichem,Scherpenheuvel-Zichem,Scherpenheuvel,,,,,,7,36,43
 Scherpenheuvel-Zichem,Scherpenheuvel-Zichem,Testelt,,,,,,15,5,20
 Scherpenheuvel-Zichem,Scherpenheuvel-Zichem,Zichem,,,,,,6,42,48
-Sint-Genesius-Rode,Sint-Genesius-Rode,Sint-Genesius-Rode,6,,1,,164,,1,172
+Sint-Genesius-Rode,Sint-Genesius-Rode#Rhode-Saint-Genèse,Sint-Genesius-Rode,6,,1,,164,,1,172
 Sint-Pieters-Leeuw,Sint-Pieters-Leeuw,Oudenaken,,,,,,,3,3
 Sint-Pieters-Leeuw,Sint-Pieters-Leeuw,Ruisbroek,,,,,,,37,37
 Sint-Pieters-Leeuw,Sint-Pieters-Leeuw,Sint-Laureins-Berchem,,,,,,,5,5
@@ -2513,7 +2513,7 @@ Lo-Reninge,Lo-Reninge,Reninge,,,,,,,36,36
 Menen,Menen,Lauwe,,,,,,,74,74
 Menen,Menen,Menen,,,,,,,203,203
 Menen,Menen,Rekkem,,,,,,,55,55
-Mesen,Mesen,Mesen,,,,,,,8,8
+Mesen,Mesen#Messines,Mesen,,,,,,,8,8
 Meulebeke,Meulebeke,Meulebeke,,,,96,,,66,162
 Middelkerke,Middelkerke,Leffinge,,,,,29,,,29
 Middelkerke,Middelkerke,Lombardsijde,,,,,13,,,13
@@ -2556,8 +2556,8 @@ Roeselare,Roeselare,Oekene,,,,,,,20,20
 Roeselare,Roeselare,Roeselare,,,,,,,569,569
 Roeselare,Roeselare,Rumbeke,,,,,,,174,174
 Ruiselede,Ruiselede,Ruiselede,,,,,,,65,65
-Spiere-Helkijn,Spiere-Helkijn,Helkijn,,,,,,,12,12
-Spiere-Helkijn,Spiere-Helkijn,Spiere,,,,,,,33,33
+Spiere-Helkijn,Spiere-Helkijn#Espierres-Helchin,Helkijn,,,,,,,12,12
+Spiere-Helkijn,Spiere-Helkijn#Espierres-Helchin,Spiere,,,,,,,33,33
 Staden,Staden,Oostnieuwkerke,,,,,,,49,49
 Staden,Staden,Staden,,,,,,,87,87
 Staden,Staden,Westrozebeke,,,,,,,40,40
