@@ -43,9 +43,16 @@ function translate(currentLanguageID) {
 function drawMap() {
     var options = {
         center: [50.52, 4.5],
-        zoom: 8,
+        description: false,
+        infowindow: false,
+        layer_selector: false,
+        legends: true,
         loaderControl: false,
-        shareable: false
+        scrollwheel: true,
+        searchControl: true,
+        shareable: false,
+        title: false,
+        zoom: 8
     }
     cartodb.createVis("map", "http://datafable.cartodb.com/api/v2/viz/6ea981ca-38fa-11e4-b1f2-0e230854a1cb/viz.json", options)
         .done(function(vis, layers) {

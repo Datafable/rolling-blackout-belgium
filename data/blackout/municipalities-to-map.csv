@@ -1,29 +1,38 @@
 municipality,municipality_geojson
-Amel,Amblève (Amel)
-Beloeil,Belœil
-Brussel / Bruxelles,Bruxelles
-Büllingen,Bullange (Büllingen)
-Bütgenbach,Butgenbach (Bütgenbach)
+Amel,Amel#Amblève
+Bever,Bever#Biévène
+Brussel / Bruxelles,Brussel#Bruxelles
+Büllingen,Büllingen#Bullange
+Bütgenbach,Bütgenbach#Butgenbach
+Comines-Warneton,Comines-Warneton#Komen-Waasten
 Court-Saint-Etienne,Court-Saint-Étienne
 Ecaussinnes,Écaussinnes
 Eghezée,Éghezée
-Elsene /Ixelles,Ixelles
+Elsene /Ixelles,Elsene#Ixelles
+Enghien,Enghien#Edingen
 Erezée,Érezée
 Etalle,Étalle
+Flobecq,Flobecq#Vloesberg
 Fontaine-l'Evêque,Fontaine-l'Évêque
-Kelmis,La Calamine (Kelmis)
+Kelmis,Kelmis#La Calamine
 Léglise,L'Église
 Meix-Devant-Virton,Meix-devant-Virton
-Oudergem / Auderghem,Auderghem
-Sankt Vith,Saint-Vith (Sankt Vith)
-Schaarbeek / Schaerbeek,Schaerbeek
-Sint-Agatha-Berchem / Berchem-Sainte-Agathe,Berchem-Sainte-Agathe
-Sint-Gillis / Saint-Gilles,Saint-Gilles
-Sint-Jans-Molenbeek / Molenbeek-Saint-Jean,Molenbeek-Saint-Jean
-Sint-Joost-ten-Node / Saint-Josse-Ten-Noode,Saint-Josse-ten-Noode
-Sint-Lambrechts-Woluwe / Woluwé-Saint-Lambert,Woluwe-Saint-Lambert
-Sint-Pieters-Woluwe / Woluwé-Saint-Pierre,Woluwe-Saint-Pierre
-Ukkel / Uccle,Uccle
-Vorst / Forest,Forest
-Waimes,Waimes (Weismes)
-Watermaal-Bosvoorde / Watermael-Boitsfort,Watermael-Boitsfort
+Mesen,Mesen#Messines
+Mouscron,Mouscron#Moeskroen
+Oudergem / Auderghem,Oudergem#Auderghem
+Ronse,Ronse#Renaix
+Sankt Vith,Sankt Vith#Saint-Vith
+Schaarbeek / Schaerbeek,Schaarbeek#Schaerbeek
+Sint-Agatha-Berchem / Berchem-Sainte-Agathe,Sint-Agatha-Berchem#Berchem-Sainte-Agathe
+Sint-Genesius-Rode,Sint-Genesius-Rode#Rhode-Saint-Genèse
+Sint-Gillis / Saint-Gilles,Sint-Gillis#Saint-Gilles
+Sint-Jans-Molenbeek / Molenbeek-Saint-Jean,Sint-Jan-Molenbeek#Molenbeek-Saint-Jean
+Sint-Joost-ten-Node / Saint-Josse-Ten-Noode,Sint-Joost-ten-Node#Saint-Josse-ten-Noode
+Sint-Lambrechts-Woluwe / Woluwé-Saint-Lambert,Sint-Lambrechts-Woluwe#Woluwe-Saint-Lambert
+Sint-Pieters-Woluwe / Woluwé-Saint-Pierre,Sint-Pieters-Woluwe#Woluwe-Saint-Pierre
+Spiere-Helkijn,Spiere-Helkijn#Espierres-Helchin
+Ukkel / Uccle,Ukkel#Uccle
+Voeren,Voeren#Fourons
+Vorst / Forest,Vorst#Forest
+Waimes,Waimes#Weismes
+Watermaal-Bosvoorde / Watermael-Boitsfort,Watermaal-Bosvoorde#Watermael-Boitsfort
