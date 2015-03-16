@@ -54,7 +54,7 @@ function drawMap() {
         title: false,
         zoom: 8
     }
-    cartodb.createVis("map", "http://datafable.cartodb.com/api/v2/viz/6ea981ca-38fa-11e4-b1f2-0e230854a1cb/viz.json", options)
+    cartodb.createVis("map", "http://datafable.cartodb.com/api/v2/viz/605582b4-43d0-11e4-b721-0edbca4b5057/viz.json", options)
         .done(function(vis, layers) {
             window.layers = layers;
             var sublayer = layers[1].getSubLayer(0);
@@ -116,7 +116,7 @@ function showMunicipalityInfo(data) {
 
 function changeSectionOnMap() {
     var section = "section_" + window.selectedSection + "_pct";
-    var cartocss = "#rolling_blackout { polygon-fill: #1a9850; polygon-opacity: 0.8; line-color: #333333; line-width: 0.5; line-opacity: 1; } #rolling_blackout[" + section + " = 100] { polygon-fill: #d73027; } #rolling_blackout[" + section + " < 100] { polygon-fill: #f79272; } #rolling_blackout[" + section + " < 80] { polygon-fill: #fed6b0; } #rolling_blackout[" + section + " < 60] { polygon-fill: #fff2cc; } #rolling_blackout[" + section + " < 40] { polygon-fill: #d2ecb4; } #rolling_blackout[" + section + " < 20] { polygon-fill: #8cce8a; } #rolling_blackout[" + section + " = 0] { polygon-fill: #1a9850; }";
+    var cartocss = "#rolling_blackout::shape { polygon-fill: #fffdea; polygon-opacity: 1; line-color: #000000; line-width: 0.5; line-opacity: 1; [" + section + " = 100] { polygon-fill: #2c323c; } [" + section + " < 100] { polygon-fill: #4f5359; } [" + section + " < 80] { polygon-fill: #727576; } [" + section + " < 60] { polygon-fill: #959793; } [" + section + " < 40] { polygon-fill: #b8b9b0; } [" + section + " < 20] { polygon-fill: #dbdbcd; } [" + section + " = 0] { polygon-fill: #fffdea; } } #rolling_blackout[zoom>=10]::labels { text-name: [municipality]; text-face-name: 'DejaVu Sans Book'; text-size: 11; text-fill: #000; text-halo-fill: #FFF; text-halo-radius: 1.5; text-wrap-width: 1; text-wrap-character: '/'; text-placement: interior; text-placement-type: simple; text-allow-overlap: false; }"
     window.layers[1].setCartoCSS(cartocss);
     highlightSectionInTable();
 }

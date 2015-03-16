@@ -6,6 +6,9 @@
 #intro .page-header {
     margin-top: 0px;
 }
+.light-yellow {
+    background-color: #fffdea;
+}
 
 #section-selection {
     margin-bottom: 20px;
